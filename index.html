@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IgniteGTM — The AI Infrastructure Ecosystem</title>
+  <meta name="description" content="IgniteGTM connects AI infrastructure builders, enterprise buyers, and investors through flagship summits, conference activations, and media production. Home of the AI INFRA SUMMIT." />
+  <meta name="keywords" content="AI infrastructure events, AI infra summit, enterprise AI events, neocloud" />
+  <meta property="og:title" content="IgniteGTM — The AI Infrastructure Ecosystem" />
+  <meta property="og:description" content="Where AI infrastructure meets market. Flagship summits, media production, and GTM advisory for the AI infrastructure ecosystem." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.ignitegtm.com/" />
+  <link rel="canonical" href="https://www.ignitegtm.com/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,72..125,100..900;1,72..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Structured data: Events -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "AI INFRA SUMMIT 6 (AIS6)",
+    "description": "The premier gathering for AI infrastructure leaders. One venue. One day. Zero fluff.",
+    "startDate": "2026-12-04",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": { "@type": "Place", "name": "San Jose, CA", "address": { "@type": "PostalAddress", "addressLocality": "San Jose", "addressRegion": "CA", "addressCountry": "US" } },
+    "organizer": { "@type": "Organization", "name": "IgniteGTM", "url": "https://www.ignitegtm.com" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "NeoCloud Summit",
+    "description": "The definitive invite-only event for next-generation cloud infrastructure founders, operators, and investors.",
+    "startDate": "2026-10-08",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": { "@type": "Place", "name": "San Jose, CA", "address": { "@type": "PostalAddress", "addressLocality": "San Jose", "addressRegion": "CA", "addressCountry": "US" } },
+    "organizer": { "@type": "Organization", "name": "IgniteGTM", "url": "https://www.ignitegtm.com" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is the AI INFRA SUMMIT?", "acceptedAnswer": { "@type": "Answer", "text": "The AI INFRA SUMMIT (AIS) is the premier gathering for AI infrastructure leaders — the engineers building AI infrastructure, the enterprises deploying it, and the investors funding what comes next. AIS6 takes place December 4, 2026 in San Jose, CA." } },
+      { "@type": "Question", "name": "What is the NeoCloud Summit?", "acceptedAnswer": { "@type": "Answer", "text": "The NeoCloud Summit is the definitive invite-only event for next-generation cloud infrastructure — convening the founders, operators, and investors building clouds purpose-built for AI workloads. Next edition: October 8, 2026." } },
+      { "@type": "Question", "name": "How can my company sponsor or speak at an IgniteGTM event?", "acceptedAnswer": { "@type": "Answer", "text": "Use the contact form at ignitegtm.com and select Sponsoring or Speaking from the interest dropdown — the IgniteGTM team will follow up directly." } },
+      { "@type": "Question", "name": "What does IgniteGTM do?", "acceptedAnswer": { "@type": "Answer", "text": "IgniteGTM is the ecosystem connecting AI infrastructure builders, enterprise buyers, and investors — through flagship events and summits, Ignite Studio media production, and strategic go-to-market advisory." } }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#ecosystem">Skip to content</a>
+
+  <!-- ══════════ PRELOADER ══════════ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__mark">
+      <img src="assets/ignite-logo.png" alt="" class="preloader__logo" id="preloaderLogo" />
+      <div class="preloader__bar"><span id="preloaderBar"></span></div>
+      <span class="preloader__count mono" id="preloaderCount">00</span>
+    </div>
+  </div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- ══════════ NAV ══════════ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#top" class="nav__logo" aria-label="IgniteGTM home">
+        <img src="assets/ignite-logo.png" alt="IGN!TE" />
+        <span class="nav__logo-sub mono">GTM</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#ecosystem">Ecosystem</a>
+        <a href="events.html">Events</a>
+        <a href="studio.html">Studio</a>
+        <a href="advisory.html">Advisory</a>
+        <a href="#insights">Insights</a>
+        <a href="team.html">Team</a>
+      </nav>
+      <a href="#contact" class="btn btn--solid btn--nav"><span>Partner With Us</span></a>
+      <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav aria-label="Mobile">
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="events.html">Events</a>
+      <a href="studio.html">Studio</a>
+      <a href="advisory.html">Advisory</a>
+      <a href="#insights">Insights</a>
+      <a href="team.html">Team</a>
+      <a href="#contact" class="mobile-menu__cta">Partner With Us</a>
+    </nav>
+  </div>
+
+  <main id="top">
+
+    <!-- ══════════ 1 · HERO ══════════ -->
+    <section class="hero" id="hero">
+      <div class="hero__media" aria-hidden="true">
+        <video id="heroVideo" class="hero__video" autoplay muted playsinline preload="auto"
+          src="https://wcllsdwlmebrapgiufzi.supabase.co/storage/v1/object/public/WS-assets/Rebranding%20animation.mp4"></video>
+        <!-- Sharper right-side gradient, per Bill -->
+        <div class="hero__scrim hero__scrim--right"></div>
+        <div class="hero__scrim hero__scrim--bottom"></div>
+        <div class="hero__scrim hero__scrim--left"></div>
+        <div class="hero__scrim hero__scrim--top"></div>
+        <canvas id="emberCanvas" class="hero__embers"></canvas>
+      </div>
+
+      <div class="hero__content">
+        <p class="eyebrow mono" data-hero-fade><span class="eyebrow__slash">//</span> The AI Infrastructure Ecosystem</p>
+        <h1 class="hero__title" id="heroTitle" aria-label="Charged with Intent.">
+          <span class="hero__line hero__line--1"><span class="ht-word" data-split>CHARGED</span></span>
+          <span class="hero__line hero__line--2">
+            <span class="ht-thin" data-split>WITH</span>
+            <span class="ht-group"><span class="ht-word ht-word--fill" data-split>INTENT</span><span class="ht-dot" aria-hidden="true">.</span></span>
+          </span>
+        </h1>
+        <p class="hero__sub" data-hero-fade>We connect the builders, buyers, and investors powering the next era of
+          AI&nbsp;infrastructure — through flagship events, media, and strategic advisory.</p>
+        <div class="hero__ctas" data-hero-fade>
+          <a href="#events" class="btn btn--solid btn--lg" data-magnetic><span>Explore Our Events</span></a>
+          <a href="#contact" class="btn btn--ghost btn--lg" data-magnetic><span>Partner With Us</span></a>
+        </div>
+
+        <div class="hero__proof" data-hero-fade>
+          <p class="hero__proof-label mono">Trusted by leaders in AI infrastructure</p>
+          <!-- SWAP: replace text wordmarks with real logo SVGs before launch -->
+          <ul class="logo-bar" role="list">
+            <li class="logo-bar__item">NVIDIA</li>
+            <li class="logo-bar__item">AMD</li>
+            <li class="logo-bar__item">SUPERMICRO</li>
+            <li class="logo-bar__item">CEREBRAS</li>
+            <li class="logo-bar__item">iMASONS</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hero__scroll mono" aria-hidden="true" data-hero-fade>
+        <span>SCROLL</span>
+        <span class="hero__scroll-line"></span>
+      </div>
+    </section>
+
+    <!-- Ticker -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track" id="tickerTrack">
+        <div class="ticker__group">
+          <span>AI INFRA SUMMIT 6</span><i class="tick-bolt"></i><span class="tick-dim">DEC 4 · 2026</span><i class="tick-bolt"></i>
+          <span>NEOCLOUD SUMMIT</span><i class="tick-bolt"></i><span class="tick-dim">OCT 8 · 2026</span><i class="tick-bolt"></i>
+          <span>ENTERPRISE AI DAY</span><i class="tick-bolt"></i><span class="tick-dim">SAN JOSE · CA</span><i class="tick-bolt"></i>
+          <span>1,000+ ATTENDEES</span><i class="tick-bolt"></i><span class="tick-dim">50+ SPEAKERS</span><i class="tick-bolt"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════ 2 · THE ECOSYSTEM ══════════ -->
+    <section class="ecosystem section" id="ecosystem">
+      <div class="ecosystem__grid">
+        <div class="ecosystem__sticky">
+          <p class="eyebrow mono" data-reveal><span class="eyebrow__slash">//</span> 01 — What We Do</p>
+          <h2 class="h-display" data-reveal>THE<br /><span class="h-display--stroke">IGNITEGTM</span><br />ECOSYSTEM<span class="dot-red">.</span></h2>
+          <p class="body-lg" data-reveal>We build the connective tissue between enterprise AI buyers, infrastructure
+            builders, and the capital that funds them. Through flagship summits, conference activations, bespoke
+            experiences, and media — we create the rooms where the real decisions happen.</p>
+          <img src="assets/bolt-strike.png" alt="" class="ecosystem__bolt" aria-hidden="true" data-parallax="-40" />
+        </div>
+
+        <div class="ecosystem__pillars">
+          <article class="pillar" data-reveal>
+            <span class="pillar__num mono">01</span>
+            <div class="pillar__body">
+              <h3 class="pillar__title">Events &amp;<br />Summits</h3>
+              <p class="pillar__tag">“We design the moments that move markets.”</p>
+              <p class="pillar__desc">From intimate executive roundtables to 1,000+ person summits, our events bring
+                together the engineers building AI infrastructure, the enterprises deploying it, and the investors
+                funding what comes next.</p>
+              <a href="events.html" class="link-arrow mono">Explore the portfolio <span aria-hidden="true">→</span></a>
+            </div>
+            <span class="pillar__spark" aria-hidden="true"></span>
+          </article>
+
+          <article class="pillar" data-reveal>
+            <span class="pillar__num mono">02</span>
+            <div class="pillar__body">
+              <h3 class="pillar__title">Ignite<br />Studio</h3>
+              <p class="pillar__tag">“Content that hits different.”</p>
+              <p class="pillar__desc">Full-service content and media production for the AI infrastructure ecosystem.
+                Speaker reels, hype videos, branded content series, and executive interviews — built from five years
+                inside the industry’s most important rooms.</p>
+              <a href="studio.html" class="link-arrow mono">Enter the studio <span aria-hidden="true">→</span></a>
+            </div>
+            <span class="pillar__spark" aria-hidden="true"></span>
+          </article>
+
+          <article class="pillar" data-reveal>
+            <span class="pillar__num mono">03</span>
+            <div class="pillar__body">
+              <h3 class="pillar__title">GTM<br />Advisory</h3>
+              <p class="pillar__tag">“Your infrastructure deserves a go-to-market strategy.”</p>
+              <p class="pillar__desc">Strategic go-to-market advisory for infrastructure companies entering or scaling
+                in the AI era. We help you find your buyers, position your story, and land in the rooms that matter.</p>
+              <a href="advisory.html" class="link-arrow mono">How we advise <span aria-hidden="true">→</span></a>
+            </div>
+            <span class="pillar__spark" aria-hidden="true"></span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ 3 · EVENTS — the line sheet ══════════ -->
+    <section class="events" id="events">
+      <div class="section events__inner">
+
+        <div class="events__head">
+          <div>
+            <p class="eyebrow mono" data-reveal><span class="eyebrow__slash">//</span> 02 — The Portfolio</p>
+            <h2 class="h-display" data-reveal>OUR <span class="h-grad">EVENTS</span><span class="dot-red">.</span></h2>
+          </div>
+          <!-- ledger key: the jump-nav. A/B/C chips unbundle the brand gradient -->
+          <nav class="ledger" aria-label="Event index" data-reveal>
+            <a class="ledger__line" href="#ais" data-spy="ais">
+              <span class="ledger__chip ledger__chip--a mono">A·01</span>
+              <span class="ledger__name mono">AI Infra Summit</span>
+              <span class="ledger__leader" aria-hidden="true"></span>
+              <span class="ledger__meta mono">Dec 04 · 2026</span>
+            </a>
+            <a class="ledger__line" href="#neocloud" data-spy="neocloud">
+              <span class="ledger__chip ledger__chip--a mono">A·02</span>
+              <span class="ledger__name mono">NeoCloud Summit</span>
+              <span class="ledger__leader" aria-hidden="true"></span>
+              <span class="ledger__meta mono">Oct 08 · 2026</span>
+            </a>
+            <a class="ledger__line" href="#ead" data-spy="ead">
+              <span class="ledger__chip ledger__chip--a mono">A·03</span>
+              <span class="ledger__name mono">Enterprise AI Day</span>
+              <span class="ledger__leader" aria-hidden="true"></span>
+              <span class="ledger__meta mono">Roundtables</span>
+            </a>
+            <a class="ledger__line" href="#conference" data-spy="conference">
+              <span class="ledger__chip ledger__chip--b mono">B</span>
+              <span class="ledger__name mono">Conference Activations</span>
+              <span class="ledger__leader" aria-hidden="true"></span>
+              <span class="ledger__meta mono">GTC · OCP · SC</span>
+            </a>
+            <a class="ledger__line" href="#bespoke" data-spy="bespoke">
+              <span class="ledger__chip ledger__chip--c mono">C</span>
+              <span class="ledger__name mono">Bespoke Activations</span>
+              <span class="ledger__leader" aria-hidden="true"></span>
+              <span class="ledger__meta mono">By commission</span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="bucket-bar" data-reveal>
+          <span class="bucket-chip bucket-chip--a" aria-hidden="true">A</span>
+          <span class="bucket-bar__label mono">Flagship Summits</span>
+          <span class="bucket-bar__meta mono">03 Events · Annual</span>
+        </div>
+
+        <div class="index-head mono" aria-hidden="true">
+          <span>Nº</span><span>Event</span><span>Key Facts</span><span>Action</span>
+        </div>
+
+        <article class="index-row" id="ais" data-spytarget="ais" data-reveal>
+          <span class="index-row__spine" aria-hidden="true"></span>
+          <div class="index-row__num">
+            <span class="num">01</span>
+            <span class="sub mono">A·01 — Flagship</span>
+          </div>
+          <div class="index-row__event">
+            <h3 class="index-row__name">AI INFRA<br /><span class="h-grad">SUMMIT</span><span class="dot-red">.</span></h3>
+            <p class="index-row__lede">The premier gathering for AI infrastructure leaders. One venue. One day.
+              Zero fluff.</p>
+            <p class="index-row__desc">Five editions in, AIS is the industry’s go-to event for the people actually
+              building the infrastructure layer — from silicon to data center to deployment.</p>
+          </div>
+          <dl class="facts">
+            <div class="facts__row"><dt class="mono">Next</dt><dd>AIS6 — December 4, 2026 · San Jose, CA</dd></div>
+            <div class="facts__row"><dt class="mono">Last</dt><dd>AIS5 — 1,000+ attendees · 50+ speakers · 30+ sponsors</dd></div>
+          </dl>
+          <div class="index-row__action">
+            <a href="#contact" class="btn btn--solid" data-prefill="Sponsoring"><span>Sponsor AIS6</span></a>
+            <!-- SWAP: real AIS conference photo -->
+            <figure class="photo-frame" data-swap="conference-photo">
+              <img src="assets/bolt-strike.png" alt="" />
+              <figcaption class="mono">AIS5 — San Jose, CA</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="index-row" id="neocloud" data-spytarget="neocloud" data-reveal>
+          <span class="index-row__spine" aria-hidden="true"></span>
+          <div class="index-row__num">
+            <span class="num">02</span>
+            <span class="sub mono">A·02 — Flagship</span>
+          </div>
+          <div class="index-row__event">
+            <h3 class="index-row__name">NEOCLOUD<br /><span class="h-grad">SUMMIT</span><span class="dot-red">.</span></h3>
+            <p class="index-row__lede">The definitive event for next-generation cloud infrastructure.</p>
+            <p class="index-row__desc">Convenes the founders, operators, and investors building the next wave of cloud
+              infrastructure — purpose-built for AI workloads, not retrofitted for them.</p>
+          </div>
+          <dl class="facts">
+            <div class="facts__row"><dt class="mono">Next</dt><dd>October 8, 2026</dd></div>
+            <div class="facts__row"><dt class="mono">Format</dt><dd>Invite-only</dd></div>
+          </dl>
+          <div class="index-row__action">
+            <a href="#contact" class="btn btn--ghost" data-prefill="Attending"><span>Request an Invite</span></a>
+            <!-- SWAP: real NeoCloud conference photo -->
+            <figure class="photo-frame" data-swap="conference-photo">
+              <img src="assets/bolt-horizon.png" alt="" />
+              <figcaption class="mono">NeoCloud — Invite-only</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="index-row" id="ead" data-spytarget="ead" data-reveal>
+          <span class="index-row__spine" aria-hidden="true"></span>
+          <div class="index-row__num">
+            <span class="num">03</span>
+            <span class="sub mono">A·03 — Flagship</span>
+          </div>
+          <div class="index-row__event">
+            <h3 class="index-row__name">ENTERPRISE<br /><span class="h-grad">AI DAY</span><span class="dot-red">.</span></h3>
+            <p class="index-row__lede">C-suite conversations on AI adoption, risk, and ROI. Designed for
+              decision-makers, not developers.</p>
+            <p class="index-row__desc">Intimate, curated, and focused on the questions that keep CIOs, CTOs, and CAIOs
+              up at night.</p>
+          </div>
+          <dl class="facts">
+            <div class="facts__row"><dt class="mono">Format</dt><dd>Executive roundtable</dd></div>
+            <div class="facts__row"><dt class="mono">Audience</dt><dd>Enterprise CxOs · VPs of Engineering · Chief AI Officers</dd></div>
+          </dl>
+          <div class="index-row__action">
+            <a href="#contact" class="btn btn--ghost" data-prefill="Speaking"><span>Apply to Speak</span></a>
+            <!-- SWAP: real Enterprise AI Day photo -->
+            <figure class="photo-frame" data-swap="conference-photo">
+              <img src="assets/bolt-strike.png" alt="" />
+              <figcaption class="mono">Enterprise AI Day</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- appendix spread: buckets B + C share one hairline spine -->
+        <div class="appendix" id="activations">
+          <article class="appendix__cell" id="conference" data-spytarget="conference" data-reveal>
+            <div class="bucket-bar bucket-bar--cell">
+              <span class="bucket-chip bucket-chip--b" aria-hidden="true">B</span>
+              <span class="bucket-bar__label mono">Conference Activations</span>
+              <span class="bucket-bar__meta mono">Ongoing</span>
+            </div>
+            <h3 class="appendix__title">Same quality. Same caliber.<br /><em>Different zip code.</em></h3>
+            <p>We bring the IgniteGTM experience to the conferences that matter. Curated side events, executive dinners,
+              and networking activations at GTC, OCP Global Summit, SuperCompute, and more.</p>
+            <ul class="venue-list mono" role="list">
+              <li>GTC</li>
+              <li>OCP Global Summit</li>
+              <li>SuperCompute</li>
+              <li>+ More</li>
+            </ul>
+          </article>
+          <article class="appendix__cell appendix__cell--hot" id="bespoke" data-spytarget="bespoke" data-reveal>
+            <div class="bucket-bar bucket-bar--cell">
+              <span class="bucket-chip bucket-chip--c" aria-hidden="true">C</span>
+              <span class="bucket-bar__label mono">Bespoke Activations</span>
+              <span class="bucket-bar__meta mono">By commission</span>
+            </div>
+            <h3 class="appendix__title">If it sounds too ambitious,<br /><em>it’s probably just ambitious enough.</em></h3>
+            <p>One-of-a-kind experiences for one-of-a-kind partnerships. From Yankee Stadium to the FIFA World Cup — we
+              create custom-built activations that turn partner relationships into unforgettable moments.</p>
+            <ul class="venue-list mono" role="list">
+              <li>Yankee Stadium</li>
+              <li>FIFA World Cup</li>
+              <li>Your idea here<span class="caret" aria-hidden="true"></span></li>
+            </ul>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════ 4 · SOCIAL PROOF ══════════ -->
+    <section class="proof section" id="proof">
+      <div class="proof__stats">
+        <div class="stat" data-reveal>
+          <span class="stat__num"><span data-count="5">0</span></span>
+          <span class="stat__label mono">Summits Produced</span>
+        </div>
+        <div class="stat" data-reveal>
+          <span class="stat__num"><span data-count="1000">0</span>+</span>
+          <span class="stat__label mono">Attendees at AIS5</span>
+        </div>
+        <div class="stat" data-reveal>
+          <span class="stat__num"><span data-count="50">0</span>+</span>
+          <span class="stat__label mono">Enterprise Speakers</span>
+        </div>
+        <div class="stat" data-reveal>
+          <span class="stat__num"><span data-count="30">0</span>+</span>
+          <span class="stat__label mono">Partners &amp; Sponsors</span>
+        </div>
+      </div>
+      <!-- SWAP: replace text wordmarks with real logo SVGs before launch -->
+      <ul class="logo-wall" role="list" data-reveal>
+        <li>NVIDIA</li><li>AMD</li><li>SUPERMICRO</li><li>CEREBRAS</li><li>iMASONS</li>
+      </ul>
+    </section>
+
+    <!-- ══════════ 5 · IGNITE STUDIO ══════════ -->
+    <section class="studio" id="studio">
+      <span class="studio__ghost" aria-hidden="true" data-parallax="60">STUDIO</span>
+      <div class="section studio__inner">
+        <p class="eyebrow mono" data-reveal><span class="eyebrow__slash">//</span> 03 — Ignite Studio</p>
+        <h2 class="h-display studio__title" data-reveal>CONTENT THAT<br /><span class="h-grad">HITS DIFFERENT</span><span class="dot-red">.</span></h2>
+        <p class="body-lg studio__lede" data-reveal>The AI infrastructure story, told right. We produce the content that
+          captures what’s really happening — from five AI INFRA SUMMITs and partnerships with the biggest names in
+          compute.</p>
+
+        <div class="studio__grid">
+          <figure class="studio__reel" data-reveal>
+            <!-- swap src to studio-teaser-loop.mp4 once uploaded — 4MB vs 96MB per visitor -->
+            <video id="studioVideo" muted playsinline loop preload="metadata"
+              poster="assets/studio-poster.jpg"
+              src="https://wcllsdwlmebrapgiufzi.supabase.co/storage/v1/object/public/WS-assets/studio-reel-web.mp4"></video>
+            <figcaption class="studio__reel-badge mono"><span class="rec-dot" aria-hidden="true"></span> SHOWREEL — AIS5</figcaption>
+            <button class="studio__play" id="reelOpen" type="button" aria-haspopup="dialog" aria-label="Watch the full showreel">
+              <span class="studio__play-chip">
+                <span class="studio__play-icon" aria-hidden="true"></span>
+                <span>Watch the full reel — 2:48</span>
+              </span>
+            </button>
+          </figure>
+
+          <div class="studio__list" data-reveal>
+            <p class="mono studio__list-label">WHAT WE PRODUCE</p>
+            <ul role="list">
+              <li>Event highlight reels &amp; sizzle videos</li>
+              <li>Speaker session recordings &amp; clips</li>
+              <li>Executive interview series</li>
+              <li>Branded content &amp; sponsor activations</li>
+              <li>Social-first short-form video</li>
+              <li>Newsletter &amp; editorial content</li>
+            </ul>
+            <a href="https://docsend.com" target="_blank" rel="noopener" class="btn btn--solid" data-magnetic><span>View the Studio Deck</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ ADVISORY ══════════ -->
+    <section class="advisory section" id="advisory">
+      <div class="advisory__grid">
+        <div>
+          <p class="eyebrow mono" data-reveal><span class="eyebrow__slash">//</span> 04 — GTM Advisory</p>
+          <h2 class="h-display" data-reveal>YOUR INFRASTRUCTURE<br />DESERVES A<br /><span class="h-grad">GO-TO-MARKET</span><br />STRATEGY<span class="dot-red">.</span></h2>
+        </div>
+        <div class="advisory__body">
+          <p class="body-lg" data-reveal>Strategic go-to-market advisory for infrastructure companies entering or
+            scaling in the AI era.</p>
+          <ul class="advisory__list" role="list">
+            <li data-reveal><span class="mono adv-num">A</span>Find your buyers — map the enterprises actually deploying at your layer of the stack.</li>
+            <li data-reveal><span class="mono adv-num">B</span>Position your story — sharpen the narrative that separates you from the noise.</li>
+            <li data-reveal><span class="mono adv-num">C</span>Land in the rooms that matter — the summits, dinners, and deals where decisions happen.</li>
+          </ul>
+          <a href="#contact" class="btn btn--ghost" data-reveal data-prefill="Partnership"><span>Talk Strategy</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ 6 · NEOCLOUD COUNCIL ══════════ -->
+    <section class="council" id="council">
+      <div class="council__inner section" data-reveal>
+        <span class="tag mono">INVITE-ONLY</span>
+        <h2 class="council__title">THE NEOCLOUD <span class="h-grad">COUNCIL</span></h2>
+        <p class="council__desc">An invite-only collective of neocloud founders and CEOs shaping the future of cloud
+          infrastructure. Limited to <b>20 founding members</b>.</p>
+        <p class="council__reveal mono">UNVEILING OCTOBER 2026 — AT THE NEOCLOUD SUMMIT</p>
+      </div>
+    </section>
+
+    <!-- ══════════ 7 · INSIGHTS ══════════ -->
+    <section class="insights section" id="insights">
+      <p class="eyebrow mono" data-reveal><span class="eyebrow__slash">//</span> 05 — Insights</p>
+      <div class="insights__head">
+        <h2 class="h-display" data-reveal>SIGNAL,<br /><span class="h-display--stroke">NOT NOISE</span><span class="dot-red">.</span></h2>
+        <p class="body-lg" data-reveal>Perspectives on AI infrastructure from the people building it. Weekly analysis,
+          event recaps, and the data that matters.</p>
+      </div>
+      <div class="insights__cards">
+        <a href="#contact" class="icard" data-reveal data-prefill="Other">
+          <span class="tag mono">NEWSLETTER</span>
+          <h3>IgniteGTM Weekly</h3>
+          <p>The infrastructure brief — who’s building, who’s buying, and where the capital is moving.</p>
+          <span class="link-arrow mono">Read the latest <span aria-hidden="true">→</span></span>
+        </a>
+        <a href="https://www.youtube.com" target="_blank" rel="noopener" class="icard" data-reveal>
+          <span class="tag mono">VIDEO</span>
+          <h3>Latest from the Summit Stage</h3>
+          <p>Keynotes, panels, and hallway conversations from the industry’s most important rooms.</p>
+          <span class="link-arrow mono">Watch now <span aria-hidden="true">→</span></span>
+        </a>
+        <a href="#contact" class="icard" data-reveal data-prefill="Media/Press">
+          <span class="tag mono">FEATURED</span>
+          <h3>The State of AI Infrastructure</h3>
+          <p>What 1,000+ builders, buyers, and investors told us about the year ahead.</p>
+          <span class="link-arrow mono">Dive in <span aria-hidden="true">→</span></span>
+        </a>
+      </div>
+      <div class="insights__ctas" data-reveal>
+        <a href="#contact" class="btn btn--solid" data-prefill="Other"><span>Subscribe to Our Newsletter</span></a>
+        <a href="https://www.youtube.com" target="_blank" rel="noopener" class="btn btn--ghost"><span>Watch on YouTube</span></a>
+      </div>
+    </section>
+
+    <!-- ══════════ 8 · CONTACT ══════════ -->
+    <section class="contact section" id="contact">
+      <div class="contact__grid">
+        <div class="contact__intro">
+          <p class="eyebrow mono" data-reveal><span class="eyebrow__slash">//</span> 06 — Contact</p>
+          <h2 class="h-display" data-reveal>LET’S BUILD<br /><span class="h-grad">SOMETHING</span><span class="dot-red">.</span></h2>
+          <p class="body-lg" data-reveal>Whether you want to sponsor, speak, partner, or just stay in the loop — we’d
+            love to hear from you.</p>
+          <div class="contact__quick" data-reveal>
+            <p class="mono contact__quick-label">QUICK START</p>
+            <div class="chip-row">
+              <button class="chip chip--btn mono" data-prefill="Sponsoring" type="button">Sponsor AIS6</button>
+              <button class="chip chip--btn mono" data-prefill="Speaking" type="button">Apply to Speak</button>
+              <button class="chip chip--btn mono" data-prefill="Other" type="button">Subscribe</button>
+            </div>
+          </div>
+        </div>
+
+        <form class="form" id="contactForm" novalidate data-reveal>
+          <div class="form__row">
+            <div class="form__field">
+              <label for="fName" class="mono">NAME</label>
+              <input id="fName" name="name" type="text" autocomplete="name" required placeholder="Ada Lovelace" />
+            </div>
+            <div class="form__field">
+              <label for="fCompany" class="mono">COMPANY</label>
+              <input id="fCompany" name="company" type="text" autocomplete="organization" placeholder="Acme Compute" />
+            </div>
+          </div>
+          <div class="form__field">
+            <label for="fEmail" class="mono">EMAIL</label>
+            <input id="fEmail" name="email" type="email" autocomplete="email" required placeholder="you@company.com" />
+          </div>
+          <div class="form__field">
+            <label for="fInterest" class="mono">I’M INTERESTED IN</label>
+            <div class="form__select">
+              <select id="fInterest" name="interest" required>
+                <option value="" disabled selected>Select one…</option>
+                <option>Sponsoring</option>
+                <option>Speaking</option>
+                <option>Partnership</option>
+                <option>Attending</option>
+                <option>Media/Press</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn--solid btn--lg btn--full" data-magnetic><span>Get in Touch</span></button>
+          <p class="form__success mono" id="formSuccess" hidden>⚡ GOT IT — WE’LL BE IN TOUCH SHORTLY.</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════ 10 · FOOTER ══════════ -->
+  <footer class="footer">
+    <div class="footer__ghost" aria-hidden="true">IGNITE</div>
+    <div class="footer__inner section">
+      <div class="footer__brand">
+        <img src="assets/ignite-logo.png" alt="IGN!TE" class="footer__logo" />
+        <p class="mono footer__tagline">CHARGED WITH INTENT.</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <p class="mono footer__col-label">EXPLORE</p>
+          <a href="events.html">Events</a>
+          <a href="studio.html">Ignite Studio</a>
+          <a href="advisory.html">GTM Advisory</a>
+          <a href="team.html">Team</a>
+        </div>
+        <div class="footer__col">
+          <p class="mono footer__col-label">CONNECT</p>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.youtube.com" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://x.com" target="_blank" rel="noopener">X</a>
+        </div>
+        <div class="footer__col">
+          <p class="mono footer__col-label">REACH US</p>
+          <a href="mailto:hello@ignitegtm.com">hello@ignitegtm.com</a>
+          <span>San Jose, CA</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__legal section mono">
+      <span>© 2026 IgniteGTM. All rights reserved.</span>
+      <span>Privacy · Terms</span>
+    </div>
+  </footer>
+
+  <!-- showreel lightbox -->
+  <div class="lightbox" id="reelLightbox" role="dialog" aria-modal="true" aria-label="Ignite Studio showreel" hidden>
+    <div class="lightbox__backdrop" data-lightbox-close></div>
+    <div class="lightbox__body">
+      <button class="lightbox__close mono" type="button" data-lightbox-close>ESC — CLOSE ✕</button>
+      <video id="reelFull" controls playsinline preload="none"
+        poster="assets/studio-poster.jpg"
+        src="https://wcllsdwlmebrapgiufzi.supabase.co/storage/v1/object/public/WS-assets/studio-reel-web.mp4"></video>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

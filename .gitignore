@@ -1,0 +1,14 @@
+# OS cruft
+.DS_Store
+
+# Video masters & web deliverables — these live in Supabase storage, never in git
+# (GitHub rejects files >100MB; the site streams everything from the WS-assets bucket)
+*.mov
+*.m4v
+*.mp4
+
+# Source images already optimized into assets/ (originals stay local/archive)
+Screenshot*
+*profile*
+240_F_*
+1778532810386.jpeg
