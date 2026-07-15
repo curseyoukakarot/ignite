@@ -371,6 +371,8 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
   color: rgba(255, 255, 255, 0.95);
 }
 .ht-thin, .ht-word, .ht-group { display: inline-block; white-space: nowrap; }
+/* extra right room so italic INTENT glyphs don\'t clip against overflow:hidden on .hero__line */
+.ht-group { padding-right: 0.12em; }
 .ht-word { font-weight: 700; }
 /* gradient applied per-char: background-clip:text on a parent breaks
    in Chromium once child spans carry transforms */
