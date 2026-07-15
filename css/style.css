@@ -376,6 +376,7 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
    in Chromium once child spans carry transforms */
 .ht-word--fill,
 .ht-word--fill .char {
+  font-style: italic;
   background: var(--grad-bolt);
   -webkit-background-clip: text;
   background-clip: text;
