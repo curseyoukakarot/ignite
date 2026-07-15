@@ -351,6 +351,7 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
 .hero__content { position: relative; max-width: 1200px; }
 
 .hero__title {
+  font-family: "Geist", "Helvetica Neue", sans-serif;
   text-transform: uppercase;
   line-height: 0.9;
   letter-spacing: -0.02em;
@@ -360,7 +361,7 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
   filter: drop-shadow(0 6px 32px rgba(0, 0, 0, 0.55));
 }
 .hero__line { display: block; overflow: hidden; padding-bottom: 0.06em; }
-.hero__line--1 { font-size: clamp(3.4rem, 10.5vw, 9.5rem); font-weight: 900; font-stretch: 90%; }
+.hero__line--1 { font-size: clamp(3.4rem, 10.5vw, 9.5rem); font-weight: 700; }
 .hero__line--2 { font-size: clamp(3.4rem, 10.5vw, 9.5rem); }
 /* solid light weight, not outlined — hairline strokes are the first
    casualty on busy footage */
@@ -370,7 +371,7 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
   color: rgba(255, 255, 255, 0.95);
 }
 .ht-thin, .ht-word, .ht-group { display: inline-block; white-space: nowrap; }
-.ht-word { font-weight: 900; font-stretch: 90%; }
+.ht-word { font-weight: 700; }
 /* gradient applied per-char: background-clip:text on a parent breaks
    in Chromium once child spans carry transforms */
 .ht-word--fill,
@@ -380,7 +381,7 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
   background-clip: text;
   color: transparent;
 }
-.ht-dot { color: var(--red); font-weight: 900; }
+.ht-dot { color: var(--red); font-weight: 700; }
 .hero__title .char { display: inline-block; will-change: transform; }
 
 .hero__sub {
