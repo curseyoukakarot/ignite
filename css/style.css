@@ -398,20 +398,7 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
   font-size: 0.68rem; color: var(--grey-dim);
   margin-bottom: 1.1rem;
 }
-.logo-bar {
-  list-style: none;
-  display: flex; flex-wrap: wrap; gap: 1.8rem 2.8rem; align-items: center;
-}
-.logo-bar__item { display: flex; align-items: center; }
-.logo-bar__img {
-  height: 26px; width: auto; max-width: 110px;
-  object-fit: contain;
-  filter: grayscale(1);
-  mix-blend-mode: screen;
-  opacity: 0.65;
-  transition: opacity 0.25s ease;
-}
-.logo-bar__item:hover .logo-bar__img { opacity: 1; }
+/* logo-bar removed — logos consolidated to proof section */
 
 .hero__scroll {
   position: absolute; right: var(--pad); bottom: 2.2rem;
@@ -789,21 +776,28 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
 
 .logo-wall {
   list-style: none;
-  display: flex; flex-wrap: wrap; gap: 2.4rem 4.8rem;
+  display: flex; flex-wrap: nowrap; gap: 0 3.2rem;
   align-items: center; justify-content: center;
   padding-top: 2.8rem;
   border-top: 1px solid var(--line);
+  overflow-x: auto;
 }
-.logo-wall__item { display: flex; align-items: center; }
+.logo-wall__item { display: flex; align-items: center; flex-shrink: 0; }
 .logo-wall__img {
-  height: 34px; width: auto; max-width: 140px;
+  height: 34px; width: auto; min-width: 60px; max-width: 140px;
   object-fit: contain;
   filter: grayscale(1);
   mix-blend-mode: screen;
   opacity: 0.65;
   transition: opacity 0.25s ease;
 }
+.logo-wall__img--invert {
+  filter: brightness(0) invert(1);
+  mix-blend-mode: normal;
+  opacity: 0.75;
+}
 .logo-wall__item:hover .logo-wall__img { opacity: 1; }
+.logo-wall__item:hover .logo-wall__img--invert { opacity: 1; }
 
 /* ───────────────────────── studio ───────────────────────── */
 
@@ -1249,10 +1243,8 @@ input:invalid:not(:placeholder-shown) { border-color: rgba(255, 61, 0, 0.6); }
   .ledger__meta { display: none; }         /* keep jump lines compact */
   .ledger__leader { display: none; }
   .appendix { grid-template-columns: 1fr; margin-top: 3rem; }
-  .logo-bar { gap: 1.4rem 2rem; }
-  .logo-bar__img { height: 22px; max-width: 90px; }
-  .logo-wall { gap: 2rem 3.2rem; }
-  .logo-wall__img { height: 28px; max-width: 110px; }
+  .logo-wall { flex-wrap: wrap; justify-content: center; gap: 2rem 2.8rem; overflow-x: hidden; }
+  .logo-wall__img { height: 28px; min-width: 50px; max-width: 100px; }
 }
 
 /* ───────────────────────── motion safety ───────────────────────── */
