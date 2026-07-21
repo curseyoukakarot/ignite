@@ -777,7 +777,7 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
 .logo-wall {
   list-style: none;
   display: flex; flex-wrap: nowrap; gap: 0 3.2rem;
-  align-items: center; justify-content: center;
+  align-items: center; justify-content: space-evenly;
   padding-top: 2.8rem;
   border-top: 1px solid var(--line);
   overflow-x: auto;
