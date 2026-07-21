@@ -795,8 +795,8 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
   filter: brightness(0) invert(1);
   mix-blend-mode: normal;
   opacity: 0.75;
-  height: 51px;
-  max-width: 270px;
+  height: 36px;
+  max-width: 190px;
 }
 .logo-wall__item:hover .logo-wall__img { opacity: 1; }
 .logo-wall__item:hover .logo-wall__img--invert { opacity: 1; }
