@@ -398,16 +398,7 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
   font-size: 0.68rem; color: var(--grey-dim);
   margin-bottom: 1.1rem;
 }
-.logo-bar {
-  list-style: none;
-  display: flex; flex-wrap: wrap; gap: 2.5rem 3.2rem; align-items: center;
-}
-.logo-bar__item {
-  font-weight: 800; font-size: 1.05rem; letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.45);
-  transition: color 0.25s;
-}
-.logo-bar__item:hover { color: var(--white); }
+/* logo-bar removed — logos consolidated to proof section */
 
 .hero__scroll {
   position: absolute; right: var(--pad); bottom: 2.2rem;
@@ -785,17 +776,30 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
 
 .logo-wall {
   list-style: none;
-  display: flex; flex-wrap: wrap; gap: 2rem 4rem;
-  align-items: center; justify-content: space-between;
-  padding-top: 2.6rem;
+  display: flex; flex-wrap: nowrap; gap: 0 3.2rem;
+  align-items: center; justify-content: space-evenly;
+  padding-top: 2.8rem;
   border-top: 1px solid var(--line);
+  overflow-x: auto;
 }
-.logo-wall li {
-  font-weight: 800; font-size: 1.3rem; letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.35);
-  transition: color 0.25s;
+.logo-wall__item { display: flex; align-items: center; flex-shrink: 0; }
+.logo-wall__img {
+  height: 34px; width: auto; min-width: 60px; max-width: 140px;
+  object-fit: contain;
+  filter: grayscale(1);
+  mix-blend-mode: screen;
+  opacity: 0.65;
+  transition: opacity 0.25s ease;
 }
-.logo-wall li:hover { color: var(--white); }
+.logo-wall__img--invert {
+  filter: brightness(0) invert(1);
+  mix-blend-mode: normal;
+  opacity: 0.75;
+  height: 36px;
+  max-width: 190px;
+}
+.logo-wall__item:hover .logo-wall__img { opacity: 1; }
+.logo-wall__item:hover .logo-wall__img--invert { opacity: 1; }
 
 /* ───────────────────────── studio ───────────────────────── */
 
@@ -1241,6 +1245,8 @@ input:invalid:not(:placeholder-shown) { border-color: rgba(255, 61, 0, 0.6); }
   .ledger__meta { display: none; }         /* keep jump lines compact */
   .ledger__leader { display: none; }
   .appendix { grid-template-columns: 1fr; margin-top: 3rem; }
+  .logo-wall { flex-wrap: wrap; justify-content: center; gap: 2rem 2.8rem; overflow-x: hidden; }
+  .logo-wall__img { height: 28px; min-width: 50px; max-width: 100px; }
 }
 
 /* ───────────────────────── motion safety ───────────────────────── */
