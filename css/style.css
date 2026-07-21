@@ -400,14 +400,18 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
 }
 .logo-bar {
   list-style: none;
-  display: flex; flex-wrap: wrap; gap: 2.5rem 3.2rem; align-items: center;
+  display: flex; flex-wrap: wrap; gap: 1.8rem 2.8rem; align-items: center;
 }
-.logo-bar__item {
-  font-weight: 800; font-size: 1.05rem; letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.45);
-  transition: color 0.25s;
+.logo-bar__item { display: flex; align-items: center; }
+.logo-bar__img {
+  height: 26px; width: auto; max-width: 110px;
+  object-fit: contain;
+  filter: grayscale(1);
+  mix-blend-mode: screen;
+  opacity: 0.65;
+  transition: opacity 0.25s ease;
 }
-.logo-bar__item:hover { color: var(--white); }
+.logo-bar__item:hover .logo-bar__img { opacity: 1; }
 
 .hero__scroll {
   position: absolute; right: var(--pad); bottom: 2.2rem;
@@ -785,17 +789,21 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
 
 .logo-wall {
   list-style: none;
-  display: flex; flex-wrap: wrap; gap: 2rem 4rem;
-  align-items: center; justify-content: space-between;
-  padding-top: 2.6rem;
+  display: flex; flex-wrap: wrap; gap: 2.4rem 4.8rem;
+  align-items: center; justify-content: center;
+  padding-top: 2.8rem;
   border-top: 1px solid var(--line);
 }
-.logo-wall li {
-  font-weight: 800; font-size: 1.3rem; letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.35);
-  transition: color 0.25s;
+.logo-wall__item { display: flex; align-items: center; }
+.logo-wall__img {
+  height: 34px; width: auto; max-width: 140px;
+  object-fit: contain;
+  filter: grayscale(1);
+  mix-blend-mode: screen;
+  opacity: 0.65;
+  transition: opacity 0.25s ease;
 }
-.logo-wall li:hover { color: var(--white); }
+.logo-wall__item:hover .logo-wall__img { opacity: 1; }
 
 /* ───────────────────────── studio ───────────────────────── */
 
@@ -1241,6 +1249,10 @@ input:invalid:not(:placeholder-shown) { border-color: rgba(255, 61, 0, 0.6); }
   .ledger__meta { display: none; }         /* keep jump lines compact */
   .ledger__leader { display: none; }
   .appendix { grid-template-columns: 1fr; margin-top: 3rem; }
+  .logo-bar { gap: 1.4rem 2rem; }
+  .logo-bar__img { height: 22px; max-width: 90px; }
+  .logo-wall { gap: 2rem 3.2rem; }
+  .logo-wall__img { height: 28px; max-width: 110px; }
 }
 
 /* ───────────────────────── motion safety ───────────────────────── */
