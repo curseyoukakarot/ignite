@@ -389,18 +389,46 @@ document.querySelectorAll("[data-prefill]").forEach((el) => {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   if (!form.reportValidity()) return;
-  // TODO: wire to backend / CRM endpoint before launch
   const btn = form.querySelector("button[type=submit]");
+  const success = document.getElementById("formSuccess");
   btn.disabled = true;
   gsap.to(btn, { opacity: 0.5, duration: 0.3 });
-  const success = document.getElementById("formSuccess");
-  success.hidden = false;
-  gsap.from(success, { y: 10, opacity: 0, duration: 0.5, ease: "power2.out" });
-  form.reset();
-  setTimeout(() => {
-    btn.disabled = false;
-    gsap.to(btn, { opacity: 1, duration: 0.3 });
-  }, 2500);
+
+  const fullName = document.getElementById("fName").value.trim();
+  const nameParts = fullName.split(/\s+/);
+  fetch("https://contact.ignitegtm.com/api/ignite/intake", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify({
+      form: "general",
+      first_name: nameParts[0] || fullName,
+      last_name: nameParts.slice(1).join(" "),
+      email: document.getElementById("fEmail").value,
+      company: document.getElementById("fCompany").value,
+      interests: [interest.value].filter(Boolean),
+      source: location.href,
+    }),
+  })
+    .then((r) => {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    })
+    .then(() => {
+      success.textContent = "⚡ GOT IT — WE'LL BE IN TOUCH SHORTLY.";
+      success.hidden = false;
+      gsap.from(success, { y: 10, opacity: 0, duration: 0.5, ease: "power2.out" });
+      form.reset();
+    })
+    .catch(() => {
+      success.textContent = "⚡ COULDN'T SEND — EMAIL US AT HELLO@IGNITEGTM.COM";
+      success.hidden = false;
+    })
+    .finally(() => {
+      setTimeout(() => {
+        btn.disabled = false;
+        gsap.to(btn, { opacity: 1, duration: 0.3 });
+      }, 1500);
+    });
 });
 
 /* ─────────────── smooth anchor offset for fixed nav ─────────────── */
