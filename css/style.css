@@ -783,23 +783,18 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
   overflow-x: auto;
 }
 .logo-wall__item { display: flex; align-items: center; flex-shrink: 0; }
+/* per-brand --lh = optically matched height: logos with tall/stacked marks
+   (cisco, supermicro) need MORE pixels to read the same size as wide
+   lockups (nvidia). Baked white-on-transparent assets live in assets/logos/. */
 .logo-wall__img {
-  height: 34px; width: auto; min-width: 60px; max-width: 140px;
+  height: var(--lh, 34px); width: auto;
   object-fit: contain;
   filter: grayscale(1);
-  mix-blend-mode: screen;
-  opacity: 0.65;
+  opacity: 0.7;
   transition: opacity 0.25s ease;
 }
-.logo-wall__img--invert {
-  filter: brightness(0) invert(1);
-  mix-blend-mode: normal;
-  opacity: 0.75;
-  height: 36px;
-  max-width: 190px;
-}
+.logo-wall__img--invert { filter: brightness(0) invert(1); }
 .logo-wall__item:hover .logo-wall__img { opacity: 1; }
-.logo-wall__item:hover .logo-wall__img--invert { opacity: 1; }
 
 /* ───────────────────────── studio ───────────────────────── */
 
@@ -1246,7 +1241,7 @@ input:invalid:not(:placeholder-shown) { border-color: rgba(255, 61, 0, 0.6); }
   .ledger__leader { display: none; }
   .appendix { grid-template-columns: 1fr; margin-top: 3rem; }
   .logo-wall { flex-wrap: wrap; justify-content: center; gap: 2rem 2.8rem; overflow-x: hidden; }
-  .logo-wall__img { height: 28px; min-width: 50px; max-width: 100px; }
+  .logo-wall__img { height: calc(var(--lh, 34px) * 0.78); }
 }
 
 /* ───────────────────────── motion safety ───────────────────────── */
