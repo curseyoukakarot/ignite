@@ -64,6 +64,16 @@ if (document.getElementById("scrollProgress")) {
 /* ─────────────── reveals / parallax / counts ─────────────── */
 
 if (!prefersReducedMotion) {
+  /* editorial spread images wipe in from their bleed edge */
+  gsap.utils.toArray("[data-reveal-media]").forEach((el) => {
+    const from = el.dataset.revealMedia === "left" ? "inset(0 100% 0 0)" : "inset(0 0 0 100%)";
+    gsap.from(el, {
+      clipPath: from, duration: 1.1, ease: "power4.out",
+      immediateRender: false,
+      scrollTrigger: { trigger: el, start: "top 75%", once: true },
+    });
+  });
+
   gsap.utils.toArray("[data-reveal]").forEach((el) => {
     gsap.from(el, {
       y: 44, opacity: 0, duration: 1, ease: "power3.out",

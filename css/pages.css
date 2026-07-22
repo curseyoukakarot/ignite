@@ -406,6 +406,164 @@ button.poster { cursor: pointer; font: inherit; text-align: left; padding: 0; }
 .member__links a { font-size: 0.66rem; color: var(--grey-dim); letter-spacing: 0.14em; }
 .member__links a:hover { color: var(--yellow); }
 
+/* full-cell-width photo bleeding to an appendix cell's inner edges (top) */
+.appendix__media {
+  position: relative;
+  margin: calc(var(--cellpad, 2rem) * -1) calc(var(--cellpad, 2rem) * -1) 1.6rem;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+.appendix__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.appendix__media figcaption {
+  position: absolute; bottom: 0.7rem; left: 0.9rem;
+  font-family: var(--font-mono); font-size: 0.56rem; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(5, 5, 6, 0.6);
+  padding: 0.4em 0.8em;
+}
+
+/* ─────────────── editorial spreads (events — "The Issue") ───────────────
+   Photography runs unveiled at full intensity; the only scrim is a narrow
+   gutter on the copy side. Type composes AGAINST the photo, not on top. */
+
+.issue-masthead {
+  position: absolute; top: var(--nav-h); left: 0; right: 0;
+  display: flex; justify-content: space-between; gap: 1rem;
+  padding: 0.8rem var(--pad);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 0.58rem;
+  color: rgba(255, 255, 255, 0.55);
+  z-index: 1;
+}
+
+.toc-strip {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 2rem;
+  margin-top: 2.4rem;
+  font-size: 0.62rem;
+}
+.toc-strip .toc-label { color: var(--grey-dim); }
+.toc-strip a { color: var(--grey); transition: color 0.2s; }
+.toc-strip a b { color: var(--yellow); font-weight: 600; margin-right: 0.5em; }
+.toc-strip a:hover { color: var(--white); }
+
+.spread {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(1rem, 2vw, 1.75rem);
+  align-items: center;
+  padding-block: clamp(4rem, 8vw, 7rem);
+  border-top: 1px solid var(--line);
+}
+.spread__media {
+  grid-column: 5 / 13; grid-row: 1;
+  margin-right: calc(var(--pad) * -1);   /* bleed to the viewport edge */
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--panel);
+}
+.spread__media img {
+  width: 100%; height: 112%;             /* overscan feeds the parallax drift */
+  position: relative; top: -6%;
+  object-fit: cover; display: block;
+}
+/* gutter scrim on the copy side only — the photo stays 90% clean */
+.spread__media::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(to right, rgba(5, 5, 6, 0.72) 0%, rgba(5, 5, 6, 0.22) 16%, transparent 30%);
+}
+.spread--flip .spread__media { grid-column: 1 / 9; margin-right: 0; margin-left: calc(var(--pad) * -1); }
+.spread--flip .spread__media::before {
+  background: linear-gradient(to left, rgba(5, 5, 6, 0.72) 0%, rgba(5, 5, 6, 0.22) 16%, transparent 30%);
+}
+.spread--xl .spread__media { grid-column: 4 / 13; aspect-ratio: 16 / 9; min-height: min(62vh, 640px); }
+.spread--med .spread__media { grid-column: 6 / 13; aspect-ratio: 3 / 2; min-height: 0; }
+
+.spread__copy { grid-column: 1 / 7; grid-row: 1; position: relative; z-index: 2; }
+.spread--flip .spread__copy { grid-column: 7 / 13; }
+.spread--med .spread__copy { grid-column: 1 / 6; }
+
+.spread__kicker {
+  font-size: 0.64rem; color: var(--yellow);
+  letter-spacing: 0.18em;
+  margin-bottom: 1rem;
+}
+.spread__name {
+  font-weight: 900; font-stretch: 92%;
+  font-size: clamp(3rem, 6.2vw, 5.8rem);
+  line-height: 0.9; letter-spacing: -0.02em; text-transform: uppercase;
+  margin-bottom: 1.4rem;
+  /* drop-shadow (not text-shadow) so .h-grad keeps a clean fill */
+  filter: drop-shadow(0 6px 30px rgba(0, 0, 0, 0.6));
+}
+.spread__deck {
+  font-size: clamp(1.1rem, 1.4vw, 1.3rem); font-weight: 700;
+  max-width: 26em;
+  padding-top: 1rem; margin-bottom: 0.9rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.22);
+}
+.spread__desc {
+  font-size: 0.95rem; font-weight: 350; color: var(--grey);
+  max-width: 34em; margin-bottom: 1.8rem;
+}
+.spread .facts { margin: 0 0 2rem; max-width: 34em; }
+.spread__copy .eyebrow { margin-bottom: 1rem; }
+.spread__copy .body-lg { margin-bottom: 2rem; }
+.spread__copy .timeline { max-width: 34em; }
+
+.spread__folio {
+  position: absolute; top: clamp(1rem, 3vw, 2.5rem); z-index: 3;
+  font-weight: 200;
+  font-size: clamp(5.5rem, 11vw, 10.5rem);
+  line-height: 0.8;
+  color: rgba(255, 255, 255, 0.14);
+  pointer-events: none; user-select: none;
+}
+.spread .spread__folio { right: calc(clamp(5.5rem, 11vw, 10.5rem) * 0.55); }
+.spread--flip .spread__folio { right: auto; left: calc(var(--pad) * -0.4); }
+
+.spread__credit {
+  position: absolute; top: calc(100% + 0.7rem); left: 0;
+  font-family: var(--font-mono); font-size: 0.56rem; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--grey-dim);
+  white-space: nowrap;
+}
+.spread__credit::before {
+  content: ""; display: inline-block;
+  width: 1.2em; height: 2px;
+  background: var(--yellow);
+  margin-right: 0.7em; vertical-align: middle;
+}
+.spread--flip .spread__credit { left: auto; right: var(--pad); }
+
+@media (pointer: fine) {
+  .spread__media img { transition: transform 1.2s ease; }
+  .spread:hover .spread__media img { transform: scale(1.02); }
+}
+
+/* wordless full-width breath between chapters */
+.intermission {
+  position: relative;
+  aspect-ratio: 2.39 / 1;
+  overflow: hidden;
+  border-block: 1px solid var(--line);
+}
+.intermission img {
+  width: 100%; height: 112%;
+  position: relative; top: -6%;
+  object-fit: cover; display: block;
+}
+.intermission .spread__credit {
+  top: auto; bottom: 1rem; left: auto; right: var(--pad);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* magazine pull-figure scale for the stats band */
+.proof--pull .stat__num { font-size: clamp(3rem, 6.5vw, 6rem); }
+
 /* ───────────────────────── responsive ───────────────────────── */
 
 @media (max-width: 1024px) {
@@ -419,7 +577,44 @@ button.poster { cursor: pointer; font: inherit; text-align: left; padding: 0; }
   .team-hall { grid-template-columns: 1fr; }
 }
 
+@media (max-width: 1100px) and (min-width: 769px) {
+  /* mid-width: spreads keep the side-by-side but relax the bleed */
+  .spread--xl .spread__media { grid-column: 5 / 13; min-height: 0; }
+  .spread__folio { font-size: clamp(4rem, 8vw, 7rem); }
+}
+
 @media (max-width: 768px) {
+  /* spreads: photo leads, full-bleed; name overlaps the photo's bottom edge */
+  .spread { display: block; padding-block: 3rem; }
+  .spread__media,
+  .spread--flip .spread__media,
+  .spread--xl .spread__media,
+  .spread--med .spread__media {
+    margin: 0 calc(var(--pad) * -1);
+    aspect-ratio: 4 / 3;
+    min-height: 0;
+  }
+  .spread__media::before,
+  .spread--flip .spread__media::before {
+    background: linear-gradient(to top, rgba(5, 5, 6, 0.82) 0%, transparent 38%);
+  }
+  .spread__copy, .spread--flip .spread__copy, .spread--med .spread__copy { margin-top: -1.4em; }
+  .spread__name { font-size: clamp(2.5rem, 11vw, 3.2rem); }
+  .spread__folio, .spread--flip .spread__folio {
+    top: auto; bottom: 0.4rem; left: auto; right: 0.4rem;
+    font-size: 4.5rem;
+    color: rgba(255, 255, 255, 0.22);
+  }
+  .spread__credit, .spread--flip .spread__credit {
+    top: auto; bottom: 0.6rem; left: 0.7rem; right: auto;
+    background: rgba(5, 5, 6, 0.65);
+    padding: 0.4em 0.8em;
+    white-space: normal;
+  }
+  .spread .btn { width: 100%; text-align: center; }
+  .intermission { aspect-ratio: 16 / 9; }
+  .issue-masthead { display: none; }
+  .toc-strip { gap: 0.6rem 1.4rem; }
   .page-hero__bolt { display: none; }
   .poster-grid { grid-template-columns: 1fr; }
   .process { grid-template-columns: 1fr; }

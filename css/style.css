@@ -698,8 +698,9 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
   margin-top: 4.5rem;
 }
 .appendix__cell {
+  --cellpad: clamp(2rem, 3.5vw, 3.5rem);
   background: var(--ink);
-  padding: clamp(2rem, 3.5vw, 3.5rem);
+  padding: var(--cellpad);
   scroll-margin-top: calc(var(--nav-h) + 16px);
 }
 .appendix__title {
