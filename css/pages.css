@@ -281,6 +281,7 @@ button.poster { cursor: pointer; font: inherit; text-align: left; padding: 0; }
 
 /* stat tiles (reused pattern, tighter) */
 .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+.stat-row--three { grid-template-columns: repeat(3, 1fr); margin-bottom: 4.5rem; }
 
 /* CTA band */
 .cta-band {
