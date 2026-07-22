@@ -511,6 +511,7 @@ button.poster { cursor: pointer; font: inherit; text-align: left; padding: 0; }
   max-width: 34em; margin-bottom: 1.8rem;
 }
 .spread .facts { margin: 0 0 2rem; max-width: 34em; }
+.spread--flush { border-top: 0; }
 .spread__copy .eyebrow { margin-bottom: 1rem; }
 .spread__copy .body-lg { margin-bottom: 2rem; }
 .spread__copy .timeline { max-width: 34em; }
