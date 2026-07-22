@@ -763,6 +763,7 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
   gap: 2rem;
   margin-bottom: 4.5rem;
 }
+.proof__stats--three { grid-template-columns: repeat(3, 1fr); }
 .stat { border-left: 2px solid var(--yellow); padding-left: 1.4rem; }
 .stat__num {
   display: block;
