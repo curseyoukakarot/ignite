@@ -159,25 +159,93 @@
             doesn&rsquo;t work here. We work with companies at every layer &mdash; from the silicon to the
             software &mdash; who need a go-to-market motion built for how this industry actually buys.</p>
         </div>
-        <div class="icp-stack">
-          <article class="icard" data-reveal>
-            <span class="tag mono">SILICON &amp; SYSTEMS</span>
-            <p>Chip designers, accelerator companies, and systems OEMs bringing compute to market.</p>
-          </article>
-          <article class="icard" data-reveal>
-            <span class="tag mono">DATA CENTER &amp; POWER</span>
-            <p>Operators, developers, and energy companies scaling the physical infrastructure behind AI.</p>
-          </article>
-          <article class="icard" data-reveal>
-            <span class="tag mono">NEOCLOUD &amp; COMPUTE PLATFORMS</span>
-            <p>GPU cloud providers, bare-metal platforms, and inference-as-a-service companies carving out market
-              share.</p>
-          </article>
-          <article class="icard" data-reveal>
-            <span class="tag mono">AI INFRASTRUCTURE SOFTWARE</span>
-            <p>Orchestration, networking, storage, security, and the software layer that makes the hardware
-              useful.</p>
-          </article>
+        <div class="stackmap" id="stackmap" data-reveal>
+          <div class="stackmap__pills" role="tablist" aria-label="AI infrastructure stack layers">
+            <button class="stackmap__pill mono is-active" role="tab" aria-selected="true" id="tab-software" aria-controls="panel-software" data-layer="software" type="button">AI Infra Software</button>
+            <button class="stackmap__pill mono" role="tab" aria-selected="false" id="tab-neocloud" aria-controls="panel-neocloud" data-layer="neocloud" type="button">NeoCloud &amp; Compute</button>
+            <button class="stackmap__pill mono" role="tab" aria-selected="false" id="tab-silicon" aria-controls="panel-silicon" data-layer="silicon" type="button">Silicon &amp; Systems</button>
+            <button class="stackmap__pill mono" role="tab" aria-selected="false" id="tab-datacenter" aria-controls="panel-datacenter" data-layer="datacenter" type="button">Data Center &amp; Power</button>
+          </div>
+
+          <div class="stackmap__viz" aria-hidden="true">
+            <svg viewBox="-75 0 695 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="smGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#FF3D00" />
+                  <stop offset="0.45" stop-color="#FF8A00" />
+                  <stop offset="1" stop-color="#FFC501" />
+                </linearGradient>
+                <linearGradient id="smGradV" x1="0" y1="1" x2="0" y2="0">
+                  <stop offset="0" stop-color="#FF3D00" />
+                  <stop offset="0.5" stop-color="#FF8A00" />
+                  <stop offset="1" stop-color="#FFC501" />
+                </linearGradient>
+                <filter id="smGlow" x="-40%" y="-40%" width="180%" height="180%">
+                  <feDropShadow dx="0" dy="0" stdDeviation="14" flood-color="#FF8A00" flood-opacity="0.55" />
+                </filter>
+              </defs>
+
+              <!-- energy pulse running up the stack -->
+              <line class="stackmap__pulse" x1="320" y1="548" x2="320" y2="14" stroke="url(#smGradV)" stroke-width="1.5" stroke-dasharray="3 9" opacity="0.6" />
+
+              <!-- plates: top of stack first in the visual (software), drawn bottom-up for z-order -->
+              <g class="plate" data-layer="datacenter" tabindex="-1">
+                <polygon class="plate__side" points="145,475 320,553 320,575 145,497" />
+                <polygon class="plate__side plate__side--r" points="495,475 320,553 320,575 495,497" />
+                <polygon class="plate__top" points="320,397 495,475 320,553 145,475" />
+                <text class="plate__label mono" x="120" y="470" text-anchor="end">DATA CENTER &amp; POWER</text>
+              </g>
+              <g class="plate" data-layer="silicon" tabindex="-1">
+                <polygon class="plate__side" points="145,350 320,428 320,450 145,372" />
+                <polygon class="plate__side plate__side--r" points="495,350 320,428 320,450 495,372" />
+                <polygon class="plate__top" points="320,272 495,350 320,428 145,350" />
+                <text class="plate__label mono" x="120" y="345" text-anchor="end">SILICON &amp; SYSTEMS</text>
+              </g>
+              <g class="plate" data-layer="neocloud" tabindex="-1">
+                <polygon class="plate__side" points="145,225 320,303 320,325 145,247" />
+                <polygon class="plate__side plate__side--r" points="495,225 320,303 320,325 495,247" />
+                <polygon class="plate__top" points="320,147 495,225 320,303 145,225" />
+                <text class="plate__label mono" x="120" y="220" text-anchor="end">NEOCLOUD &amp; COMPUTE</text>
+              </g>
+              <g class="plate" data-layer="software" tabindex="-1">
+                <polygon class="plate__side" points="145,100 320,178 320,200 145,122" />
+                <polygon class="plate__side plate__side--r" points="495,100 320,178 320,200 495,122" />
+                <polygon class="plate__top" points="320,22 495,100 320,178 145,100" />
+                <text class="plate__label mono" x="120" y="95" text-anchor="end">AI INFRA SOFTWARE</text>
+              </g>
+            </svg>
+          </div>
+
+          <div class="stackmap__details">
+            <div class="stackmap__panel is-active" role="tabpanel" id="panel-software" aria-labelledby="tab-software">
+              <p class="stackmap__kicker mono">AI INFRASTRUCTURE SOFTWARE</p>
+              <p class="stackmap__body">Orchestration, networking, storage, security, and the software layer that
+                makes the hardware useful.</p>
+              <p class="stackmap__adv mono"><span>//</span> Messaging for skeptical technical buyers &middot; ICP
+                definition &middot; strategic partnership brokering</p>
+            </div>
+            <div class="stackmap__panel" role="tabpanel" id="panel-neocloud" aria-labelledby="tab-neocloud">
+              <p class="stackmap__kicker mono">NEOCLOUD &amp; COMPUTE PLATFORMS</p>
+              <p class="stackmap__body">GPU cloud providers, bare-metal platforms, and inference-as-a-service
+                companies carving out market share.</p>
+              <p class="stackmap__adv mono"><span>//</span> Positioning whitespace &middot; NeoCloud Summit access
+                &middot; capital introductions</p>
+            </div>
+            <div class="stackmap__panel" role="tabpanel" id="panel-silicon" aria-labelledby="tab-silicon">
+              <p class="stackmap__kicker mono">SILICON &amp; SYSTEMS</p>
+              <p class="stackmap__body">Chip designers, accelerator companies, and systems OEMs bringing compute to
+                market.</p>
+              <p class="stackmap__adv mono"><span>//</span> Positioning for technical buyers &middot; enterprise buyer
+                mapping &middot; flagship stage placement</p>
+            </div>
+            <div class="stackmap__panel" role="tabpanel" id="panel-datacenter" aria-labelledby="tab-datacenter">
+              <p class="stackmap__kicker mono">DATA CENTER &amp; POWER</p>
+              <p class="stackmap__body">Operators, developers, and energy companies scaling the physical
+                infrastructure behind AI.</p>
+              <p class="stackmap__adv mono"><span>//</span> Narrative for the physical layer &middot; account
+                targeting &middot; executive roundtables</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

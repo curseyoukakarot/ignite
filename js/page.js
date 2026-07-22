@@ -157,6 +157,59 @@ if (reelLightbox) {
   });
 }
 
+/* ─────────────── stackmap (advisory): interactive stack topology ─────────────── */
+
+const stackmap = document.getElementById("stackmap");
+if (stackmap) {
+  stackmap.classList.add("js-on");
+  const pills = [...stackmap.querySelectorAll(".stackmap__pill")];
+  const plates = [...stackmap.querySelectorAll(".plate")];
+  const panels = [...stackmap.querySelectorAll(".stackmap__panel")];
+  const order = pills.map((p) => p.dataset.layer);
+  let userTookOver = false;
+  let current = "software";
+
+  const select = (layer) => {
+    current = layer;
+    pills.forEach((p) => {
+      const on = p.dataset.layer === layer;
+      p.classList.toggle("is-active", on);
+      p.setAttribute("aria-selected", String(on));
+    });
+    plates.forEach((pl) => pl.classList.toggle("is-active", pl.dataset.layer === layer));
+    panels.forEach((pn) => pn.classList.toggle("is-active", pn.id === "panel-" + layer));
+    const active = stackmap.querySelector(".stackmap__panel.is-active");
+    if (active && !prefersReducedMotion) {
+      gsap.fromTo(active, { y: 10, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" });
+    }
+  };
+  select(current);
+
+  const takeOver = (layer) => { userTookOver = true; select(layer); };
+  pills.forEach((p) => p.addEventListener("click", () => takeOver(p.dataset.layer)));
+  plates.forEach((pl) => pl.addEventListener("click", () => takeOver(pl.dataset.layer)));
+
+  // arrow-key support on the tablist
+  stackmap.querySelector(".stackmap__pills").addEventListener("keydown", (e) => {
+    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+    e.preventDefault();
+    const i = order.indexOf(current);
+    const next = order[(i + (e.key === "ArrowRight" ? 1 : order.length - 1)) % order.length];
+    takeOver(next);
+    pills.find((p) => p.dataset.layer === next).focus();
+  });
+
+  // auto-cycle until the visitor takes over — only while in view
+  if (!prefersReducedMotion) {
+    let inView = false;
+    new IntersectionObserver(([e]) => { inView = e.isIntersecting; }, { threshold: 0.3 }).observe(stackmap);
+    setInterval(() => {
+      if (userTookOver || !inView || document.hidden) return;
+      select(order[(order.indexOf(current) + 1) % order.length]);
+    }, 4000);
+  }
+}
+
 /* ─────────────── magnetic buttons + cursor ─────────────── */
 
 if (isFinePointer && !prefersReducedMotion) {

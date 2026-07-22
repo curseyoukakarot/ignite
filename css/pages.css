@@ -358,6 +358,110 @@ button.poster { cursor: pointer; font: inherit; text-align: left; padding: 0; }
 .icp-stack .icard { gap: 0.8rem; }
 .icp-stack .icard p { flex: none; }
 
+/* ─────────────── stackmap — interactive AI-infrastructure stack ───────────────
+   Isometric SVG topology: pills + plates select a layer; the active plate
+   lifts and ignites with the bolt gradient. JS-off: all detail panels show. */
+
+.stackmap { display: flex; flex-direction: column; gap: 1.8rem; }
+
+.stackmap__pills { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+.stackmap__pill {
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  color: var(--grey);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.7em 1.3em 0.7em 1.1em;
+  display: inline-flex; align-items: center; gap: 0.7em;
+  transition: color 0.25s, border-color 0.25s, background 0.25s;
+}
+.stackmap__pill::before {
+  content: "";
+  width: 3px; height: 12px;
+  background: var(--grey-dim);
+  border-radius: 2px;
+  transition: background 0.25s, box-shadow 0.25s;
+}
+.stackmap__pill:hover { color: var(--white); border-color: rgba(255, 255, 255, 0.35); }
+.stackmap__pill.is-active {
+  color: var(--yellow);
+  border-color: var(--yellow);
+  background: rgba(255, 197, 1, 0.06);
+}
+.stackmap__pill.is-active::before {
+  background: var(--yellow);
+  box-shadow: 0 0 12px rgba(255, 197, 1, 0.8);
+}
+
+.stackmap__viz { position: relative; }
+.stackmap__viz svg { width: 100%; height: auto; display: block; }
+
+.plate { cursor: pointer; pointer-events: bounding-box; }
+.plate polygon { transition: fill 0.35s, stroke 0.35s, opacity 0.35s; }
+.plate__top {
+  fill: var(--panel);
+  stroke: rgba(255, 255, 255, 0.24);
+  stroke-width: 1.25;
+}
+.plate__side { fill: #0a0a0d; stroke: rgba(255, 255, 255, 0.08); stroke-width: 1; }
+.plate__side--r { fill: #08080b; }
+.plate__label {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.14em;
+  fill: var(--grey-dim);
+  transition: fill 0.3s;
+}
+
+/* JS adds .js-on: plates become selectable states + idle float */
+.stackmap.js-on .plate {
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.35s;
+}
+.stackmap.js-on .plate:not(.is-active) { opacity: 0.55; }
+.stackmap.js-on .plate:not(.is-active):hover { opacity: 0.85; }
+.stackmap.js-on .plate.is-active { transform: translateY(-12px); }
+.stackmap.js-on .plate.is-active .plate__top {
+  stroke: url(#smGrad);
+  stroke-width: 2.5;
+  fill: #17171c;
+  filter: url(#smGlow);
+}
+.stackmap.js-on .plate.is-active .plate__label { fill: var(--yellow); }
+
+.stackmap__pulse { animation: smPulse 2.6s linear infinite; }
+@keyframes smPulse { to { stroke-dashoffset: -48; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  .stackmap.js-on .plate { animation: smFloat 7s ease-in-out infinite; }
+  .stackmap.js-on .plate[data-layer="neocloud"] { animation-delay: -1.8s; }
+  .stackmap.js-on .plate[data-layer="silicon"] { animation-delay: -3.6s; }
+  .stackmap.js-on .plate[data-layer="datacenter"] { animation-delay: -5.4s; }
+  .stackmap.js-on .plate.is-active { animation: none; }
+}
+@keyframes smFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stackmap__pulse { animation: none; }
+}
+
+.stackmap__details { border-top: 1px solid var(--line); padding-top: 1.4rem; min-height: 7.5em; }
+.stackmap__panel { display: block; }
+.stackmap.js-on .stackmap__panel { display: none; }
+.stackmap.js-on .stackmap__panel.is-active { display: block; }
+.stackmap__kicker { font-size: 0.66rem; color: var(--yellow); margin-bottom: 0.6rem; }
+.stackmap__body { font-weight: 350; color: rgba(255, 255, 255, 0.88); max-width: 46ch; margin-bottom: 0.8rem; }
+.stackmap__adv { font-size: 0.6rem; color: var(--grey-dim); letter-spacing: 0.14em; }
+.stackmap__adv span { color: var(--red); margin-right: 0.4em; }
+/* JS-off: panels stack with breathing room */
+.stackmap:not(.js-on) .stackmap__panel + .stackmap__panel { margin-top: 1.4rem; }
+
+@media (max-width: 768px) {
+  .stackmap__pill { font-size: 0.56rem; padding: 0.65em 1em; }
+  .plate__label { font-size: 15px; }
+}
+
 /* two-col split with sticky left (reuse ecosystem pattern) */
 .split {
   display: grid;
