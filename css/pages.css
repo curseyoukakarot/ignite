@@ -469,20 +469,22 @@ button.poster { cursor: pointer; font: inherit; text-align: left; padding: 0; }
   position: relative; top: -6%;
   object-fit: cover; display: block;
 }
-/* gutter scrim on the copy side only — the photo stays 90% clean */
+/* whisper of a gutter scrim at the copy edge — text no longer overlaps,
+   so the photo runs essentially clean */
 .spread__media::before {
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: linear-gradient(to right, rgba(5, 5, 6, 0.72) 0%, rgba(5, 5, 6, 0.22) 16%, transparent 30%);
+  background: linear-gradient(to right, rgba(5, 5, 6, 0.35) 0%, transparent 18%);
 }
 .spread--flip .spread__media { grid-column: 1 / 9; margin-right: 0; margin-left: calc(var(--pad) * -1); }
 .spread--flip .spread__media::before {
-  background: linear-gradient(to left, rgba(5, 5, 6, 0.72) 0%, rgba(5, 5, 6, 0.22) 16%, transparent 30%);
+  background: linear-gradient(to left, rgba(5, 5, 6, 0.35) 0%, transparent 18%);
 }
-.spread--xl .spread__media { grid-column: 4 / 13; aspect-ratio: 16 / 9; min-height: min(62vh, 640px); }
+.spread--xl .spread__media { grid-column: 5 / 13; aspect-ratio: 16 / 9; min-height: min(62vh, 640px); }
 .spread--med .spread__media { grid-column: 6 / 13; aspect-ratio: 3 / 2; min-height: 0; }
 
-.spread__copy { grid-column: 1 / 7; grid-row: 1; position: relative; z-index: 2; }
-.spread--flip .spread__copy { grid-column: 7 / 13; }
+/* copy sits flush against the photo's edge — no text over the image */
+.spread__copy { grid-column: 1 / 5; grid-row: 1; position: relative; z-index: 2; }
+.spread--flip .spread__copy { grid-column: 9 / 13; }
 .spread--med .spread__copy { grid-column: 1 / 6; }
 
 .spread__kicker {
