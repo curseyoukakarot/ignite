@@ -157,10 +157,10 @@
         </dl>
         <div class="index-row__action">
           <a href="index.html?interest=Sponsoring#contact" class="btn btn--solid"><span>Sponsor AIS6</span></a>
-          <!-- SWAP: real AIS conference photo -->
-          <figure class="photo-frame" data-swap="conference-photo">
-            <img src="assets/bolt-strike.png" alt="" />
-            <figcaption class="mono">AIS5 — San Jose, CA</figcaption>
+          <figure class="photo-frame photo-frame--live">
+            <img src="assets/events/ais-stage-panel.jpg"
+              alt="Panel on the AI INFRA SUMMIT main stage in front of the summit LED wall" />
+            <figcaption class="mono">AIS5 — Main Stage, San Jose</figcaption>
           </figure>
         </div>
       </article>
@@ -186,10 +186,10 @@
         </dl>
         <div class="index-row__action">
           <a href="index.html?interest=Attending#contact" class="btn btn--ghost"><span>Request an Invite</span></a>
-          <!-- SWAP: real NeoCloud conference photo -->
-          <figure class="photo-frame" data-swap="conference-photo">
-            <img src="assets/bolt-horizon.png" alt="" />
-            <figcaption class="mono">NeoCloud — Invite-only</figcaption>
+          <figure class="photo-frame photo-frame--live">
+            <img src="assets/events/keynote-close.jpg"
+              alt="Speaker mid-keynote in front of an LED wall at an IgniteGTM summit" />
+            <figcaption class="mono">From the Ignite Stage — AIS5</figcaption>
           </figure>
         </div>
       </article>
@@ -213,10 +213,10 @@
         </dl>
         <div class="index-row__action">
           <a href="index.html?interest=Speaking#contact" class="btn btn--ghost"><span>Apply to Speak</span></a>
-          <!-- SWAP: real Enterprise AI Day photo -->
-          <figure class="photo-frame" data-swap="conference-photo">
-            <img src="assets/bolt-strike.png" alt="" />
-            <figcaption class="mono">Enterprise AI Day</figcaption>
+          <figure class="photo-frame photo-frame--live">
+            <img src="assets/events/exec-room.jpg"
+              alt="Executive session room with long tables and a presenter on stage" />
+            <figcaption class="mono">Executive Sessions — AIS5</figcaption>
           </figure>
         </div>
       </article>
@@ -229,7 +229,11 @@
           <p class="eyebrow mono" data-reveal><span class="eyebrow__slash">//</span> 02 — The Calendar</p>
           <h2 class="h-display" data-reveal>THE ROAD<br /><span class="h-grad">AHEAD</span><span class="dot-red">.</span></h2>
           <p class="body-lg" data-reveal>What’s done and what’s next — the IgniteGTM event calendar at a glance.</p>
-          <img src="assets/bolt-horizon.png" alt="" class="ecosystem__bolt" aria-hidden="true" data-parallax="-40" />
+          <figure class="photo-frame photo-frame--live" data-reveal>
+            <img src="assets/events/arrival.jpg"
+              alt="Attendees arriving under the Welcome to AI INFRA SUMMIT arch" />
+            <figcaption class="mono">AIS5 — Arrival, San Jose, CA</figcaption>
+          </figure>
         </div>
         <div class="timeline">
           <article class="timeline__item" data-reveal>
@@ -272,6 +276,11 @@
             <li>SuperCompute</li>
             <li>+ More</li>
           </ul>
+          <figure class="photo-frame photo-frame--live" style="margin-top: 1.8rem">
+            <img src="assets/events/panel-candid.jpg"
+              alt="Three panelists sharing a laugh on stage at an IgniteGTM event" />
+            <figcaption class="mono">On Stage — AIS5</figcaption>
+          </figure>
         </article>
         <article class="appendix__cell appendix__cell--hot" id="bespoke" data-reveal>
           <div class="bucket-bar bucket-bar--cell">
@@ -291,8 +300,12 @@
       </div>
     </section>
 
-    <!-- ══════════ 04 · PROOF ══════════ -->
-    <section class="proof section" id="proof" aria-label="Track record">
+    <!-- ══════════ 04 · PROOF — the stats float over the room they describe ══════════ -->
+    <section class="proof section section-media section-media--veil" id="proof" aria-label="Track record">
+      <div class="section-media__bg" aria-hidden="true">
+        <img src="assets/events/crowd.jpg" data-parallax="50" alt="" />
+      </div>
+      <span class="section-media__caption mono" aria-hidden="true">AIS5 — San Jose, CA</span>
       <div class="sec-head" data-reveal>
         <h2>Rooms that <span class="h-grad">deliver</span><span class="dot-red">.</span></h2>
         <span class="mono">// 04 — The Receipts</span>
@@ -315,14 +328,22 @@
           <span class="stat__label mono">Partners &amp; Sponsors</span>
         </div>
       </div>
-      <!-- SWAP: replace text wordmarks with real logo SVGs before launch -->
+      <!-- per-brand --lh heights are optically matched to NVIDIA — see .logo-wall__img in style.css -->
       <ul class="logo-wall" role="list" data-reveal>
-        <li>NVIDIA</li><li>AMD</li><li>SUPERMICRO</li><li>CEREBRAS</li><li>iMASONS</li>
+        <li class="logo-wall__item"><img src="https://wcllsdwlmebrapgiufzi.supabase.co/storage/v1/object/public/WS-assets/nvidia-logo-horz-fixed.svg" alt="NVIDIA" class="logo-wall__img logo-wall__img--invert" style="--lh: 34px" width="191" height="34" loading="lazy" /></li>
+        <li class="logo-wall__item"><img src="assets/logos/amd.png" alt="AMD" class="logo-wall__img" style="--lh: 36px" width="149" height="36" loading="lazy" /></li>
+        <li class="logo-wall__item"><img src="assets/logos/supermicro.png" alt="Supermicro" class="logo-wall__img" style="--lh: 52px" width="101" height="52" loading="lazy" /></li>
+        <li class="logo-wall__item"><img src="https://wcllsdwlmebrapgiufzi.supabase.co/storage/v1/object/public/WS-assets/weka-primary-reversed-digital.svg" alt="WEKA" class="logo-wall__img" style="--lh: 40px" width="129" height="40" loading="lazy" /></li>
+        <li class="logo-wall__item"><img src="assets/logos/vultr.png" alt="Vultr" class="logo-wall__img" style="--lh: 38px" width="159" height="38" loading="lazy" /></li>
+        <li class="logo-wall__item"><img src="assets/logos/cisco.png" alt="Cisco" class="logo-wall__img" style="--lh: 54px" width="103" height="54" loading="lazy" /></li>
       </ul>
     </section>
 
-    <!-- ══════════ CTA BAND ══════════ -->
-    <section class="cta-band" aria-label="Get involved">
+    <!-- ══════════ CTA BAND — over the glowing IGN!TE room ══════════ -->
+    <section class="cta-band section-media section-media--veil" aria-label="Get involved">
+      <div class="section-media__bg" aria-hidden="true">
+        <img src="assets/events/ignite-room.jpg" alt="" />
+      </div>
       <h2 class="cta-band__title" data-reveal>THE NEXT ROOM<br /><span class="h-grad">IS BEING BUILT</span><span class="dot-red">.</span></h2>
       <p class="cta-band__sub" data-reveal>Sponsor the stage, take the mic, or be in the room. AIS6 lands
         December 4, 2026 in San Jose, CA.</p>
