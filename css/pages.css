@@ -663,6 +663,7 @@ button.poster { cursor: pointer; font: inherit; text-align: left; padding: 0; }
   position: relative; top: -6%;
   object-fit: cover; display: block;
 }
+.intermission--tall { aspect-ratio: 1.96 / 1; }
 .intermission .spread__credit {
   top: auto; bottom: 1rem; left: auto; right: var(--pad);
   color: rgba(255, 255, 255, 0.6);
