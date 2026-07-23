@@ -1096,6 +1096,8 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
 }
 .contact__intro .body-lg { margin-bottom: 2.4rem; }
 .contact__quick-label { font-size: 0.66rem; color: var(--grey-dim); margin-bottom: 1rem; }
+.contact__grid--solo { grid-template-columns: 1fr; max-width: 920px; }
+.contact__actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 0.6rem; }
 
 .form {
   background: var(--panel);
