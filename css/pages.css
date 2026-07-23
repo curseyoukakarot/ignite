@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   IGNITEGTM — sub-page components (loads after style.css)
+   IGNITEGTM - sub-page components (loads after style.css)
    events.html · studio.html · advisory.html · team.html
    ═══════════════════════════════════════════════════════════════ */
 
@@ -303,7 +303,7 @@ button.poster { cursor: pointer; font: inherit; text-align: left; padding: 0; }
 .cta-band__sub { color: var(--grey); font-weight: 350; max-width: 42em; margin: 0 auto 2.6rem; }
 .cta-band__actions { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
 
-/* full-bleed photographic section — content floats over a graded image */
+/* full-bleed photographic section - content floats over a graded image */
 .section-media { position: relative; overflow: hidden; }
 .section-media__bg {
   position: absolute;
@@ -327,7 +327,7 @@ button.poster { cursor: pointer; font: inherit; text-align: left; padding: 0; }
 .section-media .body-lg { color: rgba(255, 255, 255, 0.88); }
 .section-media .stat__label { color: rgba(255, 255, 255, 0.72); }
 
-/* uniform-veil variant — for centered/gridded content (stats, CTA bands)
+/* uniform-veil variant - for centered/gridded content (stats, CTA bands)
    that needs even legibility across the full image */
 .section-media--veil .section-media__bg::after {
   background:
@@ -359,7 +359,7 @@ button.poster { cursor: pointer; font: inherit; text-align: left; padding: 0; }
 .icp-stack .icard { gap: 0.8rem; }
 .icp-stack .icard p { flex: none; }
 
-/* ─────────────── stackmap — interactive AI-infrastructure stack ───────────────
+/* ─────────────── stackmap - interactive AI-infrastructure stack ───────────────
    Isometric SVG topology: pills + plates select a layer; the active plate
    lifts and ignites with the bolt gradient. JS-off: all detail panels show. */
 
@@ -528,7 +528,7 @@ button.poster { cursor: pointer; font: inherit; text-align: left; padding: 0; }
   padding: 0.4em 0.8em;
 }
 
-/* ─────────────── editorial spreads (events — "The Issue") ───────────────
+/* ─────────────── editorial spreads (events - "The Issue") ───────────────
    Photography runs unveiled at full intensity; the only scrim is a narrow
    gutter on the copy side. Type composes AGAINST the photo, not on top. */
 
@@ -574,7 +574,7 @@ button.poster { cursor: pointer; font: inherit; text-align: left; padding: 0; }
   position: relative; top: -6%;
   object-fit: cover; display: block;
 }
-/* whisper of a gutter scrim at the copy edge — text no longer overlaps,
+/* whisper of a gutter scrim at the copy edge - text no longer overlaps,
    so the photo runs essentially clean */
 .spread__media::before {
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
@@ -587,7 +587,7 @@ button.poster { cursor: pointer; font: inherit; text-align: left; padding: 0; }
 .spread--xl .spread__media { grid-column: 5 / 13; aspect-ratio: 16 / 9; min-height: min(62vh, 640px); }
 .spread--med .spread__media { grid-column: 6 / 13; aspect-ratio: 3 / 2; min-height: 0; }
 
-/* copy sits flush against the photo's edge — no text over the image */
+/* copy sits flush against the photo's edge - no text over the image */
 .spread__copy { grid-column: 1 / 5; grid-row: 1; position: relative; z-index: 2; }
 .spread--flip .spread__copy { grid-column: 9 / 13; }
 .spread--med .spread__copy { grid-column: 1 / 6; }

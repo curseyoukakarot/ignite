@@ -1,17 +1,17 @@
 /* ═══════════════════════════════════════════════════════════════
-   IGNITEGTM — Charged with Intent
+   IGNITEGTM - Charged with Intent
    GSAP choreography · ember particle field · 13s hero video loop
    ═══════════════════════════════════════════════════════════════ */
 
 gsap.registerPlugin(ScrollTrigger);
 
 // browser scroll restoration races ScrollTrigger's pin measurements on
-// reload-mid-page — take over and start clean
+// reload-mid-page - take over and start clean
 if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 if (!location.hash) window.scrollTo(0, 0); // don't stomp deep links like /#ais
 window.addEventListener("load", () => {
   ScrollTrigger.refresh();
-  // deep links land instantly — refresh() would otherwise cancel the
+  // deep links land instantly - refresh() would otherwise cancel the
   // browser's in-flight smooth anchor scroll and strand the page at the top
   if (location.hash) {
     const target = document.querySelector(location.hash);
@@ -29,7 +29,7 @@ const isFinePointer = window.matchMedia("(pointer: fine)").matches;
 /* ─────────────── hero video: hard loop at 13s ─────────────── */
 
 const heroVideo = document.getElementById("heroVideo");
-const LOOP_AT = 13; // seconds — per spec
+const LOOP_AT = 13; // seconds - per spec
 
 heroVideo.addEventListener("timeupdate", () => {
   if (heroVideo.currentTime >= LOOP_AT) {
@@ -103,7 +103,7 @@ if (prefersReducedMotion) {
 }
 
 // failsafe: background tabs throttle rAF, which can trap the page behind
-// the preloader — force-complete the intro if it hasn't finished in time
+// the preloader - force-complete the intro if it hasn't finished in time
 setTimeout(() => {
   if (document.getElementById("preloader")) introTL.progress(1);
 }, 4500);
@@ -232,7 +232,7 @@ if (!prefersReducedMotion) {
       opacity: 0,
       duration: 1,
       ease: "power3.out",
-      // content stays visible until the tween actually plays — if animations
+      // content stays visible until the tween actually plays - if animations
       // can't run (bg tab, reduced power, deep-link landings) nothing is lost
       immediateRender: false,
       scrollTrigger: { trigger: el, start: "top 86%", once: true },
@@ -300,7 +300,7 @@ function openReel() {
   document.body.style.overflow = "hidden";
   studioVideo.pause();
   heroVideo.pause();
-  reelFull.play().catch(() => {}); // user gesture — sound allowed
+  reelFull.play().catch(() => {}); // user gesture - sound allowed
   reelLightbox.querySelector(".lightbox__close").focus();
   if (!prefersReducedMotion) {
     gsap.fromTo(".lightbox__body",
@@ -367,7 +367,7 @@ if (isFinePointer && !prefersReducedMotion) {
 
 /* ─────────────── contact ───────────────
    The intake forms live at contact.ignitegtm.com (general / events /
-   studio / advisory) — the homepage just links out to them. */
+   studio / advisory) - the homepage just links out to them. */
 
 /* ─────────────── smooth anchor offset for fixed nav ─────────────── */
 

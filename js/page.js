@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   IGNITEGTM — shared sub-page behaviors (events/studio/advisory/team)
+   IGNITEGTM - shared sub-page behaviors (events/studio/advisory/team)
    Everything is null-safe: pages opt in by including the markup.
    ═══════════════════════════════════════════════════════════════ */
 
@@ -22,7 +22,7 @@ window.addEventListener("load", () => {
   }
 });
 
-/* page entrance is pure CSS (pages.css .page-hero animation) — compositor
+/* page entrance is pure CSS (pages.css .page-hero animation) - compositor
    animations survive throttled rAF; a GSAP entrance here strands the hero
    at opacity 0 in background tabs */
 
@@ -199,7 +199,7 @@ if (stackmap) {
     pills.find((p) => p.dataset.layer === next).focus();
   });
 
-  // auto-cycle until the visitor takes over — only while in view
+  // auto-cycle until the visitor takes over - only while in view
   if (!prefersReducedMotion) {
     let inView = false;
     new IntersectionObserver(([e]) => { inView = e.isIntersecting; }, { threshold: 0.3 }).observe(stackmap);

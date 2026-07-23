@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   IGNITEGTM — Charged with Intent
+   IGNITEGTM - Charged with Intent
    Brand: black base · red→orange→vibrant-yellow energy · IGN!TE red dot
    Type: Archivo (variable wdth/wght) · IBM Plex Mono accents
    ═══════════════════════════════════════════════════════════════ */
@@ -12,7 +12,7 @@
   --white: #ffffff;
   --grey: #a2a2ab;
   --grey-dim: #66666e;
-  --yellow: #ffc501;   /* brand vibrant yellow — sampled from IGNITE MATERIALS */
+  --yellow: #ffc501;   /* brand vibrant yellow - sampled from IGNITE MATERIALS */
   --amber: #ff8a00;
   --ember: #ff3d00;
   --red: #ff0000;      /* the IGN!TE dot */
@@ -320,18 +320,18 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
 .hero__video {
   position: absolute; top: 0; left: 0;
   /* widening while anchoring the left edge slides the video's center right
-     (no seam) — its focal content lives in the open right half instead of
+     (no seam) - its focal content lives in the open right half instead of
      behind the headline */
   width: calc(100% + var(--video-shift) * 2);
   max-width: none; /* escape the global img/video reset */
   height: 100%;
   object-fit: cover;
   /* graded one stop down so the footage reads as a lit stage behind the
-     page — the loop has bright yellow segments that otherwise fight the type */
+     page - the loop has bright yellow segments that otherwise fight the type */
   filter: brightness(0.62) saturate(0.82) contrast(1.04);
 }
 .hero__scrim { position: absolute; inset: 0; }
-/* sharper right-side gradient — per Bill */
+/* sharper right-side gradient - per Bill */
 .hero__scrim--right {
   background: linear-gradient(to left, rgba(5, 5, 6, 0.96) 0%, rgba(5, 5, 6, 0.55) 22%, transparent 52%);
 }
@@ -363,7 +363,7 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
 .hero__line { display: block; overflow: hidden; padding-bottom: 0.06em; }
 .hero__line--1 { font-size: clamp(3.4rem, 10.5vw, 9.5rem); font-weight: 700; }
 .hero__line--2 { font-size: clamp(3.4rem, 10.5vw, 9.5rem); }
-/* solid light weight, not outlined — hairline strokes are the first
+/* solid light weight, not outlined - hairline strokes are the first
    casualty on busy footage */
 .ht-thin {
   font-weight: 275;
@@ -398,7 +398,7 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
   font-size: 0.68rem; color: var(--grey-dim);
   margin-bottom: 1.1rem;
 }
-/* logo-bar removed — logos consolidated to proof section */
+/* logo-bar removed - logos consolidated to proof section */
 
 .hero__scroll {
   position: absolute; right: var(--pad); bottom: 2.2rem;
@@ -497,7 +497,7 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
 .pillar:hover .pillar__spark { opacity: 1; }
 
 /* ───────────────────────── events: the line sheet ─────────────────────────
-   An editorial index — everything visible, nothing behind interaction.
+   An editorial index - everything visible, nothing behind interaction.
    A/B/C taxonomy chips unbundle the brand gradient: yellow → amber → ember. */
 
 .events { background: var(--ink); border-top: 1px solid var(--line); }
@@ -510,7 +510,7 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
   margin-bottom: 3.5rem;
 }
 
-/* ledger key — the jump-nav */
+/* ledger key - the jump-nav */
 .ledger { display: flex; flex-direction: column; }
 .ledger__line {
   display: flex; align-items: baseline; gap: 0.7em;
@@ -561,7 +561,7 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
 .bucket-bar__label { font-size: 0.72rem; color: var(--white); }
 .bucket-bar__meta { margin-left: auto; font-size: 0.64rem; color: var(--grey-dim); }
 
-/* shared four-column line-sheet grid — column edges align down the page */
+/* shared four-column line-sheet grid - column edges align down the page */
 .index-head, .index-row {
   display: grid;
   grid-template-columns: 76px minmax(0, 1fr) 330px 220px;
@@ -606,7 +606,7 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
 .index-row__num { grid-area: num; }
 .num {
   display: block;
-  font-weight: 200;                /* thin against the 900 name — the brand rule */
+  font-weight: 200;                /* thin against the 900 name - the brand rule */
   font-size: 2.6rem;
   line-height: 1;
   color: rgba(255, 255, 255, 0.38);
@@ -640,7 +640,7 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
   max-width: 36em;
 }
 
-/* facts ledger — labels align in one yellow gutter across all rows */
+/* facts ledger - labels align in one yellow gutter across all rows */
 .facts { grid-area: facts; margin: 0; }
 .facts__row {
   display: grid;
@@ -688,7 +688,7 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
   color: var(--grey-dim);
 }
 
-/* appendix spread — B + C share a hairline spine */
+/* appendix spread - B + C share a hairline spine */
 .appendix {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -724,7 +724,7 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
 }
 .venue-list li::before { content: "//"; color: var(--yellow); }
 
-/* the hot cell — the gradient crescendo of the A→B→C color story */
+/* the hot cell - the gradient crescendo of the A→B→C color story */
 .appendix__cell--hot { background: var(--grad-bolt); color: #050506; }
 .appendix__cell--hot .bucket-bar__label { color: #050506; }
 .appendix__cell--hot .bucket-bar__meta { color: rgba(0, 0, 0, 0.6); }
@@ -1031,7 +1031,7 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 1.4rem;
 }
-/* Credential-badge cards — direct lift from the brand ID system */
+/* Credential-badge cards - direct lift from the brand ID system */
 .badge {
   position: relative;
   aspect-ratio: 2 / 3;
@@ -1213,7 +1213,7 @@ input:invalid:not(:placeholder-shown) { border-color: rgba(255, 61, 0, 0.6); }
 }
 
 @media (max-width: 768px) {
-  /* no open right side on small screens — soften the shift so the footage
+  /* no open right side on small screens - soften the shift so the footage
      keeps its identity instead of over-cropping */
   .hero__media { --video-shift: 15%; }
   .hero__line--1, .hero__line--2 { font-size: clamp(2.55rem, 13.5vw, 3.4rem); }
