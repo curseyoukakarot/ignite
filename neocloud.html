@@ -24,9 +24,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,72..125,100..900;1,72..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Google Fonts removed: Arial override active site-wide -->
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/pages.css" />
   <script type="application/ld+json">
@@ -82,6 +80,70 @@
       display: inline-block; margin-bottom: 1.4rem;
       border: 1px solid var(--yellow); color: var(--yellow);
       font-size: 0.7rem; padding: 0.5em 1em; border-radius: 2px;
+    }
+
+    /* ================================================================
+       NEOCLOUD COOL GRADIENT SCHEME
+       Lightning Blue #34B6CE → Fresh Green #14A14A
+       Palette: Fresh Green #14A14A · Lightning Blue #34B6CE ·
+                Yellow #FFD200 · White #FFFFFF · Black #000000
+    ================================================================ */
+    :root {
+      --nc-blue:  #34B6CE;
+      --nc-green: #14A14A;
+      --nc-grad:  linear-gradient(100deg, #34B6CE 0%, #14A14A 100%);
+    }
+
+    /* ── Font: Arial everywhere ── */
+    html, body, *, *::before, *::after {
+      font-family: Arial, sans-serif !important;
+    }
+
+    /* ── Gradient text utility ── */
+    .h-grad {
+      background: var(--nc-grad) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+    }
+
+    /* ── Section title periods (.dot-red) — solid Lightning Blue ── */
+    .dot-red {
+      color: #34B6CE !important;
+      background: none !important;
+      -webkit-text-fill-color: #34B6CE !important;
+    }
+
+    /* ── Accent overrides (fire yellow → cool blue) ── */
+    .nc-bar__pct         { color: var(--nc-blue) !important; }
+    .nc-partner__kicker  { color: var(--nc-blue) !important; }
+    .nc-hero-badge       { color: var(--nc-blue) !important; border-color: var(--nc-blue) !important; }
+    .nc-bar__fill        { background: var(--nc-grad) !important; }
+
+    /* ── Scroll progress bar ── */
+    .scroll-progress     { background: var(--nc-grad) !important; }
+
+    /* ── Eyebrow slash ── */
+    .eyebrow__slash      { color: var(--nc-blue) !important; }
+
+    /* ── Timeline active marker ── */
+    .timeline__item--now .timeline__date { color: var(--nc-blue) !important; }
+
+    /* ── Stat numbers (inherit fire grad → cool) ── */
+    .stat__num { background: var(--nc-grad) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important; }
+
+    /* ── Bold italic on ALL headings (hero + every section) ── */
+    h1, h2, h3, h4, h5, h6,
+    .page-hero__title,
+    .h-display,
+    .detail-row__title,
+    .nc-partner h3,
+    .cta-band__title {
+      font-style: italic !important;
+      font-weight: 900 !important;
     }
   </style>
 </head>
