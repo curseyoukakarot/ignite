@@ -115,18 +115,6 @@
       background-clip: text !important;
     }
 
-    /* ── Hero: cool gradient overlay ── */
-    .page-hero--media { position: relative; }
-    .page-hero--media::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(52,182,206,0.78) 0%, rgba(20,161,74,0.62) 100%);
-      z-index: 1;
-      pointer-events: none;
-    }
-    .page-hero--media > * { position: relative; z-index: 2; }
-
     /* ── Accent overrides (fire yellow → cool blue) ── */
     .nc-bar__pct         { color: var(--nc-blue) !important; }
     .nc-partner__kicker  { color: var(--nc-blue) !important; }
