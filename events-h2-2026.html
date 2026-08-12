@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PVKJLNT5');</script>
+  <!-- End Google Tag Manager -->
+
+  <title>H2 2026 Events | IgniteGTM</title>
+  <meta name="description" content="IgniteGTM's back-half 2026 event calendar. AI for Life Sciences, NeoCloud Summit, OCP + SuperCompute parties, AI Infra Summit 6, and Enterprise AI Day." />
+  <link rel="canonical" href="https://www.ignitegtm.com/events-h2-2026.html" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="IgniteGTM · H2 2026 Events" />
+  <meta property="og:description" content="Five events. One ecosystem. Sep–Dec 2026." />
+  <meta property="og:url" content="https://www.ignitegtm.com/events-h2-2026.html" />
+  <meta property="og:image" content="https://www.ignitegtm.com/assets/events-hero-poster.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,72..125,100..900;1,72..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+
+  <style>
+    /* ── Page-local overrides for the H2 calendar page ── */
+
+    /* Hero */
+    .cal-hero {
+      padding: 9rem 0 6rem;
+      background: #050506;
+      text-align: center;
+    }
+    .cal-hero__crumb {
+      font-family: var(--font-mono, 'IBM Plex Mono', monospace);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: #66666E;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .cal-hero__crumb a { color: inherit; text-decoration: none; }
+    .cal-hero__crumb a:hover { color: #FFC501; }
+    .cal-hero__eyebrow {
+      font-family: var(--font-mono, 'IBM Plex Mono', monospace);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      color: #FF8A00;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .cal-hero__title {
+      font-family: var(--font-display, 'Archivo', sans-serif);
+      font-size: clamp(2.8rem, 8vw, 6.5rem);
+      font-weight: 900;
+      line-height: 0.95;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      margin: 0 auto 1.5rem;
+      max-width: 900px;
+    }
+    .cal-hero__sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: #A2A2AB;
+      max-width: 520px;
+      margin: 0 auto 3rem;
+      line-height: 1.6;
+    }
+    .cal-hero__meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      font-family: var(--font-mono, 'IBM Plex Mono', monospace);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: #66666E;
+    }
+    .cal-hero__meta b { color: #fff; }
+
+    /* Divider rule */
+    .cal-rule {
+      height: 1px;
+      background: rgba(255,255,255,0.07);
+      margin: 0;
+      border: 0;
+    }
+
+    /* Calendar grid */
+    .cal-section {
+      background: #050506;
+      padding: 5rem 0 7rem;
+    }
+    .cal-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .cal-section-label {
+      font-family: var(--font-mono, 'IBM Plex Mono', monospace);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      color: #66666E;
+      text-transform: uppercase;
+      margin-bottom: 3.5rem;
+    }
+    .cal-section-label span { color: #FF3D00; margin-right: 0.5rem; }
+
+    /* Event cards */
+    .event-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .event-card {
+      display: grid;
+      grid-template-columns: 8rem 1fr auto;
+      gap: 0 2.5rem;
+      align-items: start;
+      padding: 2.5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      transition: background 0.2s;
+    }
+    .event-card:last-child { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .event-card--featured { background: #0B0B0E; padding-left: 1.5rem; padding-right: 1.5rem; border-radius: 4px; border-top-color: transparent; margin: 0 -1.5rem; }
+    .event-card--featured + .event-card { border-top-color: transparent; }
+
+    .event-date {
+      font-family: var(--font-mono, 'IBM Plex Mono', monospace);
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      color: #66666E;
+      padding-top: 0.25rem;
+      line-height: 1.5;
+    }
+    .event-date b { display: block; color: #FF8A00; font-size: 1rem; letter-spacing: -0.01em; font-weight: 600; margin-bottom: 0.15rem; }
+
+    .event-body { min-width: 0; }
+    .event-tag {
+      display: inline-block;
+      font-family: var(--font-mono, 'IBM Plex Mono', monospace);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.18rem 0.6rem;
+      border-radius: 2px;
+      margin-bottom: 0.6rem;
+      background: rgba(255,197,1,0.1);
+      color: #FFC501;
+      border: 1px solid rgba(255,197,1,0.2);
+    }
+    .event-tag--party { background: rgba(255,61,0,0.1); color: #FF8A00; border-color: rgba(255,61,0,0.2); }
+    .event-tag--flagship { background: linear-gradient(90deg, rgba(255,61,0,0.15), rgba(255,197,1,0.1)); color: #FFC501; border-color: rgba(255,197,1,0.25); }
+
+    .event-name {
+      font-family: var(--font-display, 'Archivo', sans-serif);
+      font-size: clamp(1.35rem, 3vw, 1.9rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.4rem;
+      text-transform: uppercase;
+    }
+    .event-name em {
+      font-style: normal;
+      background: linear-gradient(100deg, #FF3D00 0%, #FF8A00 45%, #FFC501 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .event-location {
+      font-family: var(--font-mono, 'IBM Plex Mono', monospace);
+      font-size: 0.72rem;
+      color: #66666E;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.5rem;
+    }
+    .event-desc { font-size: 0.9rem; color: #A2A2AB; line-height: 1.6; margin: 0; max-width: 480px; }
+
+    .event-cta { padding-top: 0.15rem; flex-shrink: 0; }
+    .event-cta .btn { white-space: nowrap; }
+
+    /* CTA band */
+    .cal-cta {
+      background: #0B0B0E;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    .cal-cta__title {
+      font-family: var(--font-display, 'Archivo', sans-serif);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      color: #fff;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .cal-cta__sub { color: #A2A2AB; font-size: 1rem; margin-bottom: 2.5rem; max-width: 460px; margin-left: auto; margin-right: auto; }
+    .cal-cta__actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .event-card {
+        grid-template-columns: 1fr;
+        gap: 0.75rem 0;
+        padding: 2rem 0;
+      }
+      .event-card--featured { padding: 2rem 1.25rem; margin: 0 -1.25rem; }
+      .event-cta { margin-top: 0.5rem; }
+      .cal-hero { padding: 7rem 1.25rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVKJLNT5"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="IgniteGTM home">
+        <img src="assets/ignite-logo.png" alt="IGN!TE" />
+        <span class="nav__logo-sub mono">GTM</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="index.html#ecosystem">Ecosystem</a>
+        <a href="events.html" class="is-here" aria-current="page">Events</a>
+        <a href="studio.html">Studio</a>
+        <a href="advisory.html">Advisory</a>
+        <a href="index.html#insights">Insights</a>
+        <a href="team.html">Team</a>
+      </nav>
+      <a href="https://contact.ignitegtm.com/" class="btn btn--solid btn--nav"><span>Partner With Us</span></a>
+      <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav aria-label="Mobile">
+      <a href="index.html#ecosystem">Ecosystem</a>
+      <a href="events.html">Events</a>
+      <a href="studio.html">Studio</a>
+      <a href="advisory.html">Advisory</a>
+      <a href="index.html#insights">Insights</a>
+      <a href="team.html">Team</a>
+      <a href="https://contact.ignitegtm.com/" class="mobile-menu__cta">Partner With Us</a>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- ══════════ HERO ══════════ -->
+    <section class="cal-hero" id="top">
+      <p class="cal-hero__crumb mono">
+        <a href="index.html">IGNITEGTM</a>
+        <span style="color:#FF3D00">//</span>
+        <a href="events.html">EVENTS</a>
+        <span style="color:#FF3D00">//</span>
+        <span>H2 2026</span>
+      </p>
+      <p class="cal-hero__eyebrow">Back-Half 2026 · September – December</p>
+      <h1 class="cal-hero__title">Five Events<span style="color:#FF0000">.</span><br /><span style="background:linear-gradient(100deg,#FF3D00 0%,#FF8A00 45%,#FFC501 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">One Ecosystem.</span></h1>
+      <p class="cal-hero__sub">From life sciences to supercomputing — the IgniteGTM event calendar for the second half of 2026.</p>
+      <div class="cal-hero__meta">
+        <span><b>5</b> Events</span>
+        <span><b>Sep 17</b> → <b>Dec 16</b></span>
+        <span><b>Bay Area</b> · Silicon Valley</span>
+      </div>
+    </section>
+
+    <hr class="cal-rule" />
+
+    <!-- ══════════ EVENT LIST ══════════ -->
+    <section class="cal-section" aria-label="H2 2026 event calendar">
+      <div class="cal-inner">
+        <p class="cal-section-label"><span>//</span> 2026 CALENDAR · BACK HALF</p>
+
+        <ul class="event-list" role="list">
+
+          <!-- 1: AI for Life Sciences -->
+          <li class="event-card" data-reveal>
+            <div class="event-date">
+              <b>SEP 17</b>
+              2026
+            </div>
+            <div class="event-body">
+              <span class="event-tag">Flagship</span>
+              <h2 class="event-name">AI for <em>Life Sciences</em></h2>
+              <p class="event-location">📍 South San Francisco, CA</p>
+              <p class="event-desc">Bringing together life sciences executives, AI researchers, and infrastructure builders at the intersection of biology and artificial intelligence.</p>
+            </div>
+            <div class="event-cta">
+              <a href="https://luma.com/SEP17_ai-for-lifesciences" class="btn btn--solid" target="_blank" rel="noopener"><span>Register →</span></a>
+            </div>
+          </li>
+
+          <!-- 2: NeoCloud Summit -->
+          <li class="event-card" data-reveal>
+            <div class="event-date">
+              <b>OCT 8</b>
+              2026
+            </div>
+            <div class="event-body">
+              <span class="event-tag">Flagship · Invite-Only</span>
+              <h2 class="event-name"><em>NeoCloud</em> Summit</h2>
+              <p class="event-location">📍 San Francisco, CA · SF Tech Week</p>
+              <p class="event-desc">The definitive event for next-generation cloud infrastructure. Founders, operators, and investors building the AI-native cloud stack — invite-only.</p>
+            </div>
+            <div class="event-cta">
+              <a href="https://luma.com/neocloud_summit_oct8" class="btn btn--solid" target="_blank" rel="noopener"><span>Register →</span></a>
+            </div>
+          </li>
+
+          <!-- 3: OCP + SuperCompute Parties -->
+          <li class="event-card" data-reveal>
+            <div class="event-date">
+              <b>NOV</b>
+              2026
+            </div>
+            <div class="event-body">
+              <span class="event-tag event-tag--party">Activation</span>
+              <h2 class="event-name">OCP + <em>SuperCompute</em></h2>
+              <p class="event-location">📍 IgniteGTM Parties · TBA</p>
+              <p class="event-desc">IgniteGTM brings the energy to OCP Global Summit and SuperCompute — curated activations, executive dinners, and late-night moments that matter.</p>
+            </div>
+            <div class="event-cta">
+              <a href="https://contact.ignitegtm.com/events?interest=Attending" class="btn btn--ghost" target="_blank" rel="noopener"><span>Stay Updated →</span></a>
+            </div>
+          </li>
+
+          <!-- 4: AI Infra Summit 6 -->
+          <li class="event-card event-card--featured" data-reveal>
+            <div class="event-date">
+              <b>DEC 3</b>
+              2026
+            </div>
+            <div class="event-body">
+              <span class="event-tag event-tag--flagship">Flagship · AIS6</span>
+              <h2 class="event-name">AI Infra <em>Summit 6</em></h2>
+              <p class="event-location">📍 San Francisco, CA</p>
+              <p class="event-desc">The flagship returns for its sixth edition. One venue, one day, zero fluff — the premier gathering for AI infrastructure leaders across silicon, data center, and deployment.</p>
+            </div>
+            <div class="event-cta">
+              <a href="https://luma.com/aiinfra6" class="btn btn--solid" target="_blank" rel="noopener"><span>Register →</span></a>
+            </div>
+          </li>
+
+          <!-- 5: Enterprise AI Day -->
+          <li class="event-card" data-reveal>
+            <div class="event-date">
+              <b>DEC 16</b>
+              2026
+            </div>
+            <div class="event-body">
+              <span class="event-tag">Executive</span>
+              <h2 class="event-name">Enterprise <em>AI Day</em></h2>
+              <p class="event-location">📍 Silicon Valley, CA</p>
+              <p class="event-desc">C-suite conversations on AI adoption, risk, and ROI. Designed for decision-makers — CIOs, CTOs, and Chief AI Officers — not developers.</p>
+            </div>
+            <div class="event-cta">
+              <a href="https://contact.ignitegtm.com/events?interest=Attending" class="btn btn--ghost" target="_blank" rel="noopener"><span>Request Invite →</span></a>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══════════ CTA ══════════ -->
+    <section class="cal-cta" aria-label="Get involved">
+      <h2 class="cal-cta__title">Be in the <span style="background:linear-gradient(100deg,#FF3D00 0%,#FF8A00 45%,#FFC501 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Room.</span></h2>
+      <p class="cal-cta__sub">Sponsor the stage, take the mic, or join the ecosystem. Five events, one community, zero filler.</p>
+      <div class="cal-cta__actions">
+        <a href="https://contact.ignitegtm.com/events?interest=Sponsoring" class="btn btn--solid btn--lg"><span>Sponsor an Event</span></a>
+        <a href="https://contact.ignitegtm.com/events?interest=Speaking" class="btn btn--ghost btn--lg"><span>Apply to Speak</span></a>
+        <a href="events.html" class="btn btn--ghost btn--lg"><span>Full Events Page</span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__ghost" aria-hidden="true">IGNITE</div>
+    <div class="footer__inner section">
+      <div class="footer__brand">
+        <img src="assets/ignite-logo.png" alt="IGN!TE" class="footer__logo" />
+        <p class="mono footer__tagline">CHARGED WITH INTENT.</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <p class="mono footer__col-label">EXPLORE</p>
+          <a href="events.html">Events</a>
+          <a href="studio.html">Ignite Studio</a>
+          <a href="advisory.html">GTM Advisory</a>
+          <a href="team.html">Team</a>
+        </div>
+        <div class="footer__col">
+          <p class="mono footer__col-label">CONNECT</p>
+          <a href="https://www.linkedin.com/company/ignitegtm" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.youtube.com/@IgniteGTM" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://x.com/IgniteGTM" target="_blank" rel="noopener">X</a>
+        </div>
+        <div class="footer__col">
+          <p class="mono footer__col-label">REACH US</p>
+          <a href="mailto:engage@ignitegtm.com">engage@ignitegtm.com</a>
+          <span>San Jose, CA</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__legal section mono">
+      <span>© 2026 IgniteGTM. All rights reserved.</span>
+      <span>Privacy · Terms</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="js/page.js"></script>
+  <script src="https://contact.ignitegtm.com/ignite-chat-widget.js" defer></script>
+</body>
+</html>
