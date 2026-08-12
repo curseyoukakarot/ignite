@@ -196,10 +196,37 @@
     }
     .event-desc { font-size: 0.9rem; color: #A2A2AB; line-height: 1.6; margin: 0; max-width: 480px; }
 
-    .event-cta { padding-top: 0.15rem; flex-shrink: 0; display: flex; flex-direction: column; gap: 0.6rem; align-items: flex-end; }
-    .event-cta .btn { white-space: nowrap; }
-    .btn--sponsor { background: transparent; border: 1px solid rgba(255,197,1,0.4); color: #FFC501; font-size: 0.78rem; letter-spacing: 0.04em; }
-    .btn--sponsor:hover { background: rgba(255,197,1,0.08); border-color: #FFC501; }
+    .event-cta {
+      padding-top: 0.15rem;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      align-items: stretch;
+      min-width: 160px;
+    }
+    .event-cta a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 1.1rem;
+      border-radius: 3px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background 0.18s, border-color 0.18s;
+      text-align: center;
+    }
+    .event-cta .btn--solid   { background: #FFC501; color: #050506; border: 1px solid #FFC501; }
+    .event-cta .btn--solid:hover   { background: #FFD740; border-color: #FFD740; }
+    .event-cta .btn--ghost   { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.25); }
+    .event-cta .btn--ghost:hover   { border-color: rgba(255,255,255,0.6); }
+    .event-cta .btn--sponsor { background: transparent; color: #FFC501; border: 1px solid rgba(255,197,1,0.35); }
+    .event-cta .btn--sponsor:hover { background: rgba(255,197,1,0.08); border-color: #FFC501; }
 
     /* CTA band */
     .cal-cta {
@@ -229,7 +256,7 @@
         padding: 2rem 0;
       }
       .event-card--featured { padding: 2rem 1.25rem; margin: 0 -1.25rem; }
-      .event-cta { margin-top: 0.5rem; }
+      .event-cta { margin-top: 0.5rem; min-width: 0; }
       .cal-hero { padding: 7rem 1.25rem 4rem; }
     }
   </style>
@@ -287,12 +314,12 @@
       </p>
       <p class="cal-hero__eyebrow">Back-Half 2026 · September – December</p>
       <h1 class="cal-hero__title">The back half of 2026 is going to be <span style="background:linear-gradient(100deg,#FF3D00 0%,#FF8A00 45%,#FFC501 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">FIRE<span style="-webkit-text-fill-color:#FF0000">.</span></span></h1>
-      <p class="cal-hero__sub">We've been heads down building something special at IgniteGTM — and now we're ready to show you what's next. Five events. Four cities. One mission: bringing together the leaders building the future of AI infrastructure.</p>
+      <p class="cal-hero__sub">We've been heads down building something special at IgniteGTM — and now we're ready to show you what's next. Six events. Five cities. One mission: bringing together the leaders building the future of AI infrastructure.</p>
       <p class="cal-hero__sub" style="margin-top:-1rem;color:#FFC501;font-weight:600;">Here's what's coming.</p>
       <div class="cal-hero__meta">
-        <span><b>5</b> Events</span>
+        <span><b>6</b> Events</span>
         <span><b>Sep 17</b> → <b>Dec 16</b></span>
-        <span><b>4</b> Cities</span>
+        <span><b>5</b> Cities</span>
       </div>
     </section>
 
@@ -305,12 +332,9 @@
 
         <ul class="event-list" role="list">
 
-          <!-- 1: AI for Life Sciences -->
+          <!-- 1: AI for Life Sciences · Sep 17 -->
           <li class="event-card" data-reveal>
-            <div class="event-date">
-              <b>SEP 17</b>
-              2026
-            </div>
+            <div class="event-date"><b>SEP 17</b>2026</div>
             <div class="event-body">
               <span class="event-tag">Flagship</span>
               <h2 class="event-name">AI for <em>Life Sciences</em></h2>
@@ -318,16 +342,13 @@
               <p class="event-desc">Where AI meets biotech in the epicenter of life sciences innovation. If you're building at the intersection of healthcare and AI infrastructure, this is the room you want to be in.</p>
             </div>
             <div class="event-cta">
-              <a href="https://luma.com/SEP17_ai-for-lifesciences" class="btn btn--solid" target="_blank" rel="noopener"><span>Register →</span></a>
+              <a href="https://luma.com/SEP17_ai-for-lifesciences" class="btn--solid" target="_blank" rel="noopener">Register →</a>
             </div>
           </li>
 
-          <!-- 2: NeoCloud Summit -->
+          <!-- 2: NeoCloud Summit · Oct 8 -->
           <li class="event-card" data-reveal>
-            <div class="event-date">
-              <b>OCT 8</b>
-              2026
-            </div>
+            <div class="event-date"><b>OCT 8</b>2026</div>
             <div class="event-body">
               <span class="event-tag">Flagship · Invite-Only</span>
               <h2 class="event-name"><em>NeoCloud</em> Summit</h2>
@@ -335,34 +356,42 @@
               <p class="event-desc">Our first-ever NeoCloud Summit. Bringing together the next generation of cloud and AI infrastructure leaders for a day you won't forget. More details dropping soon.</p>
             </div>
             <div class="event-cta">
-              <a href="https://luma.com/neocloud_summit_oct8" class="btn btn--solid" target="_blank" rel="noopener"><span>Register →</span></a>
-              <a href="https://contact.ignitegtm.com/events?interest=Sponsoring" class="btn btn--sponsor" target="_blank" rel="noopener"><span>✦ Sponsorships Open</span></a>
+              <a href="https://luma.com/neocloud_summit_oct8" class="btn--solid" target="_blank" rel="noopener">Register →</a>
+              <a href="https://www.ignitegtm.com/events.html" class="btn--sponsor" target="_blank" rel="noopener">✦ Sponsorships Open</a>
             </div>
           </li>
 
-          <!-- 3: OCP + SuperCompute Parties -->
+          <!-- 3: OCP Global Summit · Oct 13 -->
           <li class="event-card" data-reveal>
-            <div class="event-date">
-              <b>NOV</b>
-              2026
-            </div>
+            <div class="event-date"><b>OCT 13</b>2026</div>
             <div class="event-body">
               <span class="event-tag event-tag--party">Activation</span>
-              <h2 class="event-name">OCP + <em>SuperCompute</em></h2>
-              <p class="event-location">📍 IgniteGTM Parties · TBA</p>
-              <p class="event-desc">We're hosting at two of the biggest events in the infrastructure world. If you're there, you're with us.</p>
+              <h2 class="event-name">OCP <em>Global Summit</em></h2>
+              <p class="event-location">📍 San Jose, CA</p>
+              <p class="event-desc">We're hosting at one of the biggest events in the infrastructure world. If you're there, you're with us.</p>
             </div>
             <div class="event-cta">
-              <a href="https://contact.ignitegtm.com/events?interest=Attending" class="btn btn--ghost" target="_blank" rel="noopener"><span>Stay Updated →</span></a>
+              <a href="https://www.opencompute.org/summit/global-summit" class="btn--ghost" target="_blank" rel="noopener">Main Event ↗</a>
             </div>
           </li>
 
-          <!-- 4: AI Infra Summit 6 -->
-          <li class="event-card event-card--featured" data-reveal>
-            <div class="event-date">
-              <b>DEC 3</b>
-              2026
+          <!-- 4: SC26 SuperCompute · Nov 17 -->
+          <li class="event-card" data-reveal>
+            <div class="event-date"><b>NOV 17</b>2026</div>
+            <div class="event-body">
+              <span class="event-tag event-tag--party">Activation</span>
+              <h2 class="event-name">SC26 <em>SuperCompute</em></h2>
+              <p class="event-location">📍 Chicago, IL</p>
+              <p class="event-desc">We're hosting at SC26 — the premier supercomputing conference. Find the IgniteGTM team in Chicago.</p>
             </div>
+            <div class="event-cta">
+              <a href="https://sc26.supercomputing.org" class="btn--ghost" target="_blank" rel="noopener">Main Event ↗</a>
+            </div>
+          </li>
+
+          <!-- 5: AI Infra Summit 6 · Dec 3 -->
+          <li class="event-card event-card--featured" data-reveal>
+            <div class="event-date"><b>DEC 3</b>2026</div>
             <div class="event-body">
               <span class="event-tag event-tag--flagship">Flagship · AIS6</span>
               <h2 class="event-name">AI Infra <em>Summit 6</em></h2>
@@ -370,17 +399,14 @@
               <p class="event-desc">The flagship is back. Bigger stage, bigger conversations, bigger impact. 1,200+ AI infrastructure leaders in one room. AIS6 is going to be something else.</p>
             </div>
             <div class="event-cta">
-              <a href="https://luma.com/aiinfra6" class="btn btn--solid" target="_blank" rel="noopener"><span>Register →</span></a>
-              <a href="https://contact.ignitegtm.com/events?interest=Sponsoring" class="btn btn--sponsor" target="_blank" rel="noopener"><span>✦ Sponsorships Open</span></a>
+              <a href="https://luma.com/aiinfra6" class="btn--solid" target="_blank" rel="noopener">Register →</a>
+              <a href="https://www.ignitegtm.com/events.html" class="btn--sponsor" target="_blank" rel="noopener">✦ Sponsorships Open</a>
             </div>
           </li>
 
-          <!-- 5: Enterprise AI Day -->
+          <!-- 6: Enterprise AI Day · Dec 16 -->
           <li class="event-card" data-reveal>
-            <div class="event-date">
-              <b>DEC 16</b>
-              2026
-            </div>
+            <div class="event-date"><b>DEC 16</b>2026</div>
             <div class="event-body">
               <span class="event-tag">Executive</span>
               <h2 class="event-name">Enterprise <em>AI Day</em></h2>
@@ -388,7 +414,7 @@
               <p class="event-desc">Closing out the year with a deep dive into enterprise AI adoption. The leaders building real AI at scale — in one room.</p>
             </div>
             <div class="event-cta">
-              <a href="https://contact.ignitegtm.com/events?interest=Attending" class="btn btn--ghost" target="_blank" rel="noopener"><span>Request Invite →</span></a>
+              <a href="https://www.ignitegtm.com/events.html" class="btn--ghost" target="_blank" rel="noopener">Request Invite →</a>
             </div>
           </li>
 
