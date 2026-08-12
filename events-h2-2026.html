@@ -3,13 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PVKJLNT5');</script>
-  <!-- End Google Tag Manager -->
+  <!-- GTM removed from this standalone landing page (injected chat widget via GTM tag) -->
 
   <title>H2 2026 Events | IgniteGTM</title>
   <meta name="description" content="Five events. Four cities. One mission. The back half of 2026 is going to be FIRE - IgniteGTM's H2 2026 event calendar." />
@@ -30,14 +24,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,72..125,100..900;1,72..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/pages.css" />
+  <!-- pages.css excluded: this page uses none of its classes -->
 
   <style>
     /* ── Page-local overrides for the H2 calendar page ── */
 
-    /* Base font — lock to Archivo sans-serif, never fall back to serif */
-    body, p, li, span, div {
+    /* Hard-lock backgrounds and font — no external interference */
+    html, body {
+      background: #050506 !important;
+      color: #ffffff;
+    }
+    body, p, li, span, div, h1, h2, h3, a {
       font-family: 'Archivo', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    /* Suppress anything injected by third-party scripts */
+    body > iframe, body > div[style*="z-index: 2147483647"],
+    body > div[style*="position: fixed"][style*="bottom"],
+    body > div[style*="position:fixed"][style*="bottom"] {
+      display: none !important;
     }
 
     /* Hero */
@@ -315,10 +319,7 @@
   </style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVKJLNT5"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+
 
   <header class="lp-nav" aria-label="Site navigation">
     <a href="https://www.ignitegtm.com/" class="lp-nav__logo" aria-label="IgniteGTM home">
