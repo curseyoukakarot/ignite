@@ -155,17 +155,20 @@ main [id], section[id] { scroll-margin-top: calc(var(--nav-h) + 8px); }
 .btn > span { display: inline-block; transform: skewX(8deg); position: relative; z-index: 2; }
 
 .btn--solid { background: var(--yellow); color: var(--black); }
-.btn--solid::before {
+/* hover-fill layers are scoped to .btn: on a bare .btn--* element (no .btn,
+   so position:static) inset:0 resolves to the page and paints a viewport-
+   sized overlay — the events-h2-2026 white-box bug */
+.btn.btn--solid::before {
   content: "";
   position: absolute; inset: 0; z-index: 1;
   background: var(--grad-bolt);
   transform: translateX(-101%);
   transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1);
 }
-.btn--solid:hover::before { transform: translateX(0); }
+.btn.btn--solid:hover::before { transform: translateX(0); }
 
 .btn--ghost { border: 1.5px solid rgba(255, 255, 255, 0.4); color: var(--white); }
-.btn--ghost::before {
+.btn.btn--ghost::before {
   content: "";
   position: absolute; inset: 0; z-index: 1;
   background: var(--white);

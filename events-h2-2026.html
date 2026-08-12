@@ -45,6 +45,15 @@
       display: none !important;
     }
 
+    /* THE WHITE-BOX FIX: style.css gives .btn--solid/.btn--ghost a ::before
+       hover-fill layer (inset:0). This page's buttons are bare .btn--* with
+       position:static, so that layer resolved against the PAGE and painted a
+       viewport-sized white rectangle one screen down. Kill all of them here. */
+    a[class*="btn--"]::before,
+    a[class*="btn--"]::after {
+      content: none !important;
+    }
+
     /* Hero */
     .cal-hero {
       padding: 9rem 0 6rem;
