@@ -253,6 +253,54 @@
     .cal-cta__sub { color: #A2A2AB; font-size: 1rem; margin-bottom: 2.5rem; max-width: 460px; margin-left: auto; margin-right: auto; }
     .cal-cta__actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
+    /* ── Self-contained nav (no page.js dependency) ── */
+    .lp-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+      background: rgba(5,5,6,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      height: 64px;
+      display: flex; align-items: center;
+      padding: 0 2rem;
+      gap: 2rem;
+    }
+    .lp-nav__logo {
+      display: flex; align-items: center; gap: 0.4rem;
+      text-decoration: none; flex-shrink: 0;
+    }
+    .lp-nav__logo img { height: 22px; width: auto; }
+    .lp-nav__logo span {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.12em; color: #A2A2AB;
+    }
+    .lp-nav__links {
+      display: flex; align-items: center; gap: 1.5rem;
+      list-style: none; margin: 0; padding: 0;
+      flex: 1;
+    }
+    .lp-nav__links a {
+      font-size: 0.82rem; color: #A2A2AB;
+      text-decoration: none; letter-spacing: 0.02em;
+      transition: color 0.15s;
+    }
+    .lp-nav__links a:hover, .lp-nav__links a.is-here { color: #fff; }
+    .lp-nav__cta {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.5rem 1rem;
+      background: #FFC501; color: #050506;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.06em; border-radius: 3px;
+      text-decoration: none; white-space: nowrap; flex-shrink: 0;
+      transition: background 0.15s;
+    }
+    .lp-nav__cta:hover { background: #FFD740; }
+    @media (max-width: 768px) {
+      .lp-nav__links { display: none; }
+    }
+
     /* Responsive */
     @media (max-width: 640px) {
       .event-card {
@@ -272,39 +320,20 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-  <div class="cursor" id="cursor" aria-hidden="true"></div>
-  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
-
-  <header class="nav" id="nav">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__logo" aria-label="IgniteGTM home">
-        <img src="https://www.ignitegtm.com/assets/ignite-logo.png" alt="IGN!TE" />
-        <span class="nav__logo-sub mono">GTM</span>
-      </a>
-      <nav class="nav__links" aria-label="Primary">
-        <a href="index.html#ecosystem">Ecosystem</a>
-        <a href="events.html" class="is-here" aria-current="page">Events</a>
-        <a href="studio.html">Studio</a>
-        <a href="advisory.html">Advisory</a>
-        <a href="index.html#insights">Insights</a>
-        <a href="team.html">Team</a>
-      </nav>
-      <a href="https://contact.ignitegtm.com/" class="btn btn--solid btn--nav"><span>Partner With Us</span></a>
-      <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
-    </div>
+  <header class="lp-nav" aria-label="Site navigation">
+    <a href="https://www.ignitegtm.com/" class="lp-nav__logo" aria-label="IgniteGTM home">
+      <img src="https://www.ignitegtm.com/assets/ignite-logo.png" alt="IGN!TE" />
+      <span>GTM</span>
+    </a>
+    <ul class="lp-nav__links" role="list">
+      <li><a href="https://www.ignitegtm.com/#ecosystem">Ecosystem</a></li>
+      <li><a href="https://www.ignitegtm.com/events.html" class="is-here" aria-current="page">Events</a></li>
+      <li><a href="https://www.ignitegtm.com/studio.html">Studio</a></li>
+      <li><a href="https://www.ignitegtm.com/advisory.html">Advisory</a></li>
+      <li><a href="https://www.ignitegtm.com/team.html">Team</a></li>
+    </ul>
+    <a href="https://contact.ignitegtm.com/" class="lp-nav__cta">Partner With Us</a>
   </header>
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <nav aria-label="Mobile">
-      <a href="index.html#ecosystem">Ecosystem</a>
-      <a href="events.html">Events</a>
-      <a href="studio.html">Studio</a>
-      <a href="advisory.html">Advisory</a>
-      <a href="index.html#insights">Insights</a>
-      <a href="team.html">Team</a>
-      <a href="https://contact.ignitegtm.com/" class="mobile-menu__cta">Partner With Us</a>
-    </nav>
-  </div>
 
   <main>
 
@@ -476,6 +505,6 @@
     </div>
   </footer>
 
-  <script src="js/page.js"></script>
+  <!-- No page.js on this standalone page; nav is pure CSS, no JS dependencies -->
 </body>
 </html>
