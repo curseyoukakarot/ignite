@@ -59,6 +59,8 @@
       padding: 9rem 0 6rem;
       background: #050506;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
     .cal-hero__crumb {
       font-family: var(--font-mono, 'IBM Plex Mono', monospace);
@@ -111,6 +113,36 @@
       color: #66666E;
     }
     .cal-hero__meta b { color: #fff; }
+
+    /* ── Hero video background ── */
+    .hero-vid-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .hero-vid-iframe {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 100%; height: 100%;
+      min-width: 177.78vh;
+      min-height: 56.25vw;
+      transform: translate(-50%, -50%);
+      border: 0;
+    }
+    .hero-vid-scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(5,5,6,0.88) 0%,
+        rgba(5,5,6,0.55) 35%,
+        rgba(5,5,6,0.55) 65%,
+        rgba(5,5,6,0.92) 100%
+      );
+    }
+    .hero-vid-content { position: relative; z-index: 2; }
 
     /* Divider rule */
     .cal-rule {
@@ -352,6 +384,18 @@
 
     <!-- ══════════ HERO ══════════ -->
     <section class="cal-hero" id="top">
+
+      <!-- YouTube hype reel background -->
+      <div class="hero-vid-wrap" aria-hidden="true">
+        <iframe class="hero-vid-iframe"
+          src="https://www.youtube.com/embed/pQoY7nYzmdU?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=pQoY7nYzmdU&amp;controls=0&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1"
+          allow="autoplay; encrypted-media"
+          title="IgniteGTM hype reel"
+          aria-hidden="true"></iframe>
+        <div class="hero-vid-scrim"></div>
+      </div>
+
+      <div class="hero-vid-content">
       <p class="cal-hero__crumb mono">
         <a href="index.html">IGNITEGTM</a>
         <span style="color:#FF3D00">//</span>
@@ -368,6 +412,7 @@
         <span><b>Sep 17</b> → <b>Dec 16</b></span>
         <span><b>5</b> Cities</span>
       </div>
+      </div><!-- /.hero-vid-content -->
     </section>
 
     <hr class="cal-rule" />
