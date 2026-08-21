@@ -81,6 +81,21 @@
       border: 1px solid var(--yellow); color: var(--yellow);
       font-size: 0.7rem; padding: 0.5em 1em; border-radius: 2px;
     }
+    /* Program phase-header rows (Morning / Midday / Afternoon / Evening) */
+    .timeline__item--phase {
+      margin: 2.6rem 0 0.6rem; padding: 1.3rem 1.4rem;
+      border: 1px solid rgba(52,182,206,0.45);
+      border-left: 3px solid #34B6CE;
+      background: rgba(52,182,206,0.06);
+      border-radius: 4px;
+    }
+    .timeline__item--phase:first-child { margin-top: 0.6rem; }
+    .timeline__item--phase .timeline__date {
+      color: #34B6CE !important; font-weight: 800;
+      letter-spacing: 0.18em; font-size: 0.72rem;
+    }
+    .timeline__item--phase .timeline__title { font-size: 1.5rem; color: #FFFFFF; margin-top: 0.2rem; }
+    .timeline__item--phase .timeline__desc { color: #A2A2AB; margin-top: 0.4rem; }
 
     /* ================================================================
        NEOCLOUD COOL GRADIENT SCHEME
@@ -200,9 +215,10 @@
       </p>
       <span class="nc-hero-badge mono" data-reveal>[ NEOCLOUD SUMMIT ] · INAUGURAL · SF TECH WEEK 2026</span>
       <h1 class="page-hero__title" id="ncTitle">WHERE THE<br /><span class="h-grad">NEXT CLOUD</span><br />GETS BUILT<span class="dot-red">.</span></h1>
-      <p class="page-hero__intro">Hyperscalers built the cloud. Neoclouds are rebuilding it for AI. On October 8,
-        the founders of that new layer share one stage - with the enterprise buyers, investors, and infrastructure
-        leaders deploying capital into it.</p>
+      <p class="page-hero__intro">The neocloud market is being built right now, and the people building it will be in
+        one room on October 8. The full stack of the AI cloud economy - the neoclouds standing up GPU capacity, the
+        technology partners powering them, the enterprises deciding where to spend, and the investors funding the
+        buildout. One stage, one day, the operators and decision-makers who move this market.</p>
       <div class="page-hero__meta mono">
         <span><b>Date</b>October 8, 2026</span>
         <span><b>Venue</b>Hotel Kabuki · San Francisco, CA</span>
@@ -356,9 +372,18 @@
     <section class="section" id="program" aria-labelledby="programTitle">
       <p class="eyebrow mono" data-reveal><span class="eyebrow__slash">//</span> 05 - The Program</p>
       <h2 class="h-display" id="programTitle" data-reveal>ONE DAY.<br /><span class="h-grad">EVERY LAYER</span> OF THE STACK<span class="dot-red">.</span></h2>
-      <p class="body-lg studio__lede" data-reveal>Doors 08:30-17:00 PT. All day, concurrent with the main stage:
-        the Branded Studio - professional interviews, captured by Ignite Studio. Draft agenda, subject to change.</p>
+      <p class="body-lg studio__lede" data-reveal>One stage, one day, moving up the stack - from the neoclouds standing
+        up GPU capacity, to the technology partners powering them, to the enterprises deciding where to spend. All
+        day, concurrent with the main stage: the Branded Studio - professional interviews, captured by Ignite Studio.
+        Draft agenda, subject to change.</p>
       <div class="timeline" style="max-width: 860px;">
+        <article class="timeline__item timeline__item--phase" data-reveal>
+          <p class="timeline__date mono">MORNING</p>
+          <h3 class="timeline__title">The NeoClouds</h3>
+          <p class="timeline__desc">The physical foundation of AI - data centers, energy, colocation - what inference
+            clouds want from a GPU partner, how new clouds turn raw capacity into product enterprises will actually
+            buy, and how investors are pricing the GPU ecosystem right now.</p>
+        </article>
         <article class="timeline__item" data-reveal>
           <p class="timeline__date mono">08:30</p>
           <h3 class="timeline__title">Doors Open · Coffee &amp; Innovation Row</h3>
@@ -387,10 +412,22 @@
           <h3 class="timeline__title">The Main Event · State of the NeoCloud</h3>
           <p class="timeline__desc">Panel · 4-5 Council members · 45 min.</p>
         </article>
+        <article class="timeline__item timeline__item--phase" data-reveal>
+          <p class="timeline__date mono">MIDDAY</p>
+          <h3 class="timeline__title">The Technology Partners</h3>
+          <p class="timeline__desc">Direct presentations from the companies building the hardware, storage, and
+            networking that neoclouds run on. Confirmed partners include Supermicro, AMD, and WEKA.</p>
+        </article>
         <article class="timeline__item" data-reveal>
           <p class="timeline__date mono">12:15</p>
           <h3 class="timeline__title">Curated Networking Lunch · The Gallery</h3>
-          <p class="timeline__desc">Named seats · mixed personas.</p>
+          <p class="timeline__desc">Named seats · mixed personas · real conversations.</p>
+        </article>
+        <article class="timeline__item timeline__item--phase" data-reveal>
+          <p class="timeline__date mono">AFTERNOON</p>
+          <h3 class="timeline__title">The Enterprise</h3>
+          <p class="timeline__desc">The buyers, unfiltered. A dedicated Vultr keynote plus enterprise panels on what
+            leaders actually want from AI infrastructure and what it takes to earn their business.</p>
         </article>
         <article class="timeline__item" data-reveal>
           <p class="timeline__date mono">13:30</p>
@@ -410,6 +447,11 @@
           <p class="timeline__date mono">16:00</p>
           <h3 class="timeline__title">Gallery Happy Hour</h3>
           <p class="timeline__desc">Through 17:00.</p>
+        </article>
+        <article class="timeline__item" data-reveal>
+          <p class="timeline__date mono">EVENING</p>
+          <h3 class="timeline__title">Invite-Only VIP Dinner</h3>
+          <p class="timeline__desc">Very limited seating · named seats · mixed personas · real conversations.</p>
         </article>
       </div>
     </section>
@@ -487,10 +529,10 @@
       <div class="section-media__bg" aria-hidden="true">
         <img src="assets/events/ignite-room.jpg" alt="" loading="lazy" />
       </div>
-      <h2 class="cta-band__title" data-reveal>READY TO JOIN THE<br /><span class="h-grad">NEOCLOUD REVOLUTION</span><span class="dot-red">?</span></h2>
-      <p class="cta-band__sub" data-reveal>We're assembling the sponsors, partners, and thought leaders for the most
-        important new event in AI infrastructure. The first room. The first conversation. The first move belongs
-        to you.</p>
+      <h2 class="cta-band__title" data-reveal>SEATS ARE LIMITED.<br /><span class="h-grad">RESERVE YOURS NOW</span><span class="dot-red">.</span></h2>
+      <p class="cta-band__sub" data-reveal>If you build, power, buy, or fund AI infrastructure, this is your room. A curated
+        networking lunch, a Gallery happy hour, and an invite-only VIP dinner with very limited seating - named
+        seats, mixed personas, real conversations.</p>
       <div class="cta-band__actions" data-reveal>
         <a href="https://contact.ignitegtm.com/events?interest=Sponsoring" class="btn btn--solid btn--lg" data-magnetic><span>Sponsor the Summit</span></a>
         <a href="https://contact.ignitegtm.com/events?interest=Attending" class="btn btn--ghost btn--lg" data-magnetic><span>Request an Invite</span></a>
