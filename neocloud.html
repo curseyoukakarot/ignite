@@ -83,13 +83,16 @@
     }
     /* Program phase-header rows (Morning / Midday / Afternoon / Evening) */
     .timeline__item--phase {
-      margin: 2.6rem 0 0.6rem; padding: 1.3rem 1.4rem;
-      border: 1px solid rgba(52,182,206,0.45);
-      border-left: 3px solid #34B6CE;
-      background: rgba(52,182,206,0.06);
-      border-radius: 4px;
+      margin: 2.6rem 0 0.6rem !important; padding: 1.3rem 1.4rem !important;
+      border: 1px solid rgba(52,182,206,0.45) !important;
+      border-left: 3px solid #34B6CE !important;
+      background: rgba(52,182,206,0.06) !important;
+      border-radius: 4px !important;
     }
-    .timeline__item--phase:first-child { margin-top: 0.6rem; }
+    .timeline__item--phase:first-child { margin-top: 0.6rem !important; }
+    .timeline__item--phase:last-child { margin-bottom: 0.6rem !important; }
+    /* neutralize any base timeline connector/marker on phase cards so all four match */
+    .timeline__item--phase::before, .timeline__item--phase::after { display: none !important; }
     .timeline__item--phase .timeline__date {
       color: #34B6CE !important; font-weight: 800;
       letter-spacing: 0.18em; font-size: 0.72rem;
