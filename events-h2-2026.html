@@ -12,6 +12,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#050506" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -38,10 +39,21 @@
     body, p, li, span, div, h1, h2, h3, a {
       font-family: 'Archivo', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
-    /* Suppress anything injected by third-party scripts */
-    body > iframe, body > div[style*="z-index: 2147483647"],
-    body > div[style*="position: fixed"][style*="bottom"],
-    body > div[style*="position:fixed"][style*="bottom"] {
+    /* ── Suppress injected third-party overlays ─────────────────────────
+       The ignite-chat-widget appends #ignite-chat-root directly to <body>
+       with position:relative, so the old bottom-fixed selector missed it.
+       This nuclear list targets every known injection pattern. ── */
+    #ignite-chat-root,
+    body > div[id*="chat"],
+    body > div[id*="widget"],
+    body > div[class*="chat"],
+    body > div[class*="widget"],
+    body > iframe,
+    body > div[style*="z-index: 2147483"],
+    body > div[style*="position: fixed"],
+    body > div[style*="position:fixed"],
+    body > div[style*="position:absolute"][style*="top: 0"],
+    body > div[style*="position:absolute"][style*="top:0"] {
       display: none !important;
     }
 
@@ -567,3 +579,4 @@
   <!-- No page.js on this standalone page; nav is pure CSS, no JS dependencies -->
 </body>
 </html>
+
