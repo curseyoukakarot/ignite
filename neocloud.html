@@ -62,13 +62,27 @@
     .nc-roster__name { font-weight: 800; font-size: 0.92rem; letter-spacing: 0.01em; text-transform: uppercase; display: flex; flex-direction: column; gap: 0.35em; }
     .nc-roster__tag { font-size: 0.54rem; font-weight: 700; letter-spacing: 0.12em; color: #34B6CE; }
     .nc-roster__seat--keynote { border-color: rgba(52,182,206,0.55); background: rgba(52,182,206,0.07); }
-    .nc-bars { margin-top: 2.4rem; display: flex; flex-direction: column; gap: 1.15rem; max-width: 780px; }
-    .nc-bar__head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 0.45rem; }
-    .nc-bar__label { font-size: 0.72rem; color: var(--white); }
-    .nc-bar__pct { font-size: 0.72rem; color: var(--yellow); }
-    .nc-bar__desc { font-size: 0.86rem; color: var(--grey); font-weight: 350; margin-top: 0.35rem; }
-    .nc-bar__track { height: 4px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; }
-    .nc-bar__fill { height: 100%; background: var(--grad-bolt); border-radius: 2px; }
+    /* ── Audience: editorial "who's in the room" intelligence map ── */
+    .nc-aud { margin-top: 2.6rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+    .nc-aud__card {
+      position: relative; border: 1px solid var(--line); background: var(--panel);
+      border-radius: 4px; padding: clamp(1.5rem, 2.4vw, 2.1rem);
+      display: flex; flex-direction: column; gap: 0.5rem; overflow: hidden;
+    }
+    .nc-aud__card::before {
+      content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+      background: var(--nc-grad, linear-gradient(180deg,#34B6CE,#14A14A));
+    }
+    .nc-aud__pct {
+      font-size: clamp(2.8rem, 5vw, 3.8rem); font-weight: 900; line-height: 0.95;
+      letter-spacing: -0.02em; font-style: italic;
+      background: var(--nc-grad, linear-gradient(100deg,#34B6CE,#14A14A));
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .nc-aud__pct sup { font-size: 0.4em; font-weight: 800; vertical-align: super; -webkit-text-fill-color: inherit; }
+    .nc-aud__label { font-size: 0.82rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--white); }
+    .nc-aud__desc { font-size: 0.9rem; color: var(--grey); font-weight: 350; margin-top: 0.1rem; }
+    .nc-aud__foot { margin-top: 2rem; font-size: 0.66rem; color: var(--grey-dim); }
     .nc-partner-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; margin-top: 2.4rem; }
     .nc-partner {
       border: 1px solid var(--line); background: var(--panel); border-radius: 4px;
@@ -247,11 +261,11 @@
         builds what comes next has never existed. Until now.</p>
       <div class="proof__stats proof__stats--three" style="margin-top: 3rem;">
         <div class="stat" data-reveal>
-          <span class="stat__num">$<span data-count="250">0</span>B+</span>
+          <span class="stat__num">$<span data-count="250">250</span>B+</span>
           <span class="stat__label mono">Projected GPU-as-a-Service market by 2030 · ABI Research</span>
         </div>
         <div class="stat" data-reveal>
-          <span class="stat__num"><span data-count="250">0</span></span>
+          <span class="stat__num"><span data-count="250">250</span></span>
           <span class="stat__label mono">Curated leaders in the room · seniority-screened</span>
         </div>
         <div class="stat" data-reveal>
@@ -311,41 +325,43 @@
     <!-- ══════════ 03 · THE AUDIENCE ══════════ -->
     <section class="section" id="audience" aria-labelledby="audienceTitle">
       <p class="eyebrow mono" data-reveal><span class="eyebrow__slash">//</span> 03 - Who's in the Room</p>
-      <h2 class="h-display" id="audienceTitle" data-reveal><span data-count="250">0</span> <span class="h-grad">CURATED LEADERS</span><span class="dot-red">.</span></h2>
-      <p class="body-lg studio__lede" data-reveal>AI Infra &amp; Cloud · Enterprise Tech · Data Centers &amp; Energy ·
-        Semiconductors · Storage &amp; Networking · VC / PE · Sovereign AI</p>
-      <div class="nc-bars">
-        <div class="nc-bar" data-reveal>
-          <div class="nc-bar__head mono"><span class="nc-bar__label">Enterprise Infrastructure Leaders</span><span class="nc-bar__pct">30%</span></div>
-          <div class="nc-bar__track"><div class="nc-bar__fill" style="width: 30%"></div></div>
-          <p class="nc-bar__desc">CIOs, VPs of Infrastructure, and cloud architects evaluating neocloud for AI workloads.</p>
+      <h2 class="h-display" id="audienceTitle" data-reveal><span data-count="250">250</span> <span class="h-grad">CURATED LEADERS</span><span class="dot-red">.</span></h2>
+      <p class="body-lg studio__lede" data-reveal>Not a headcount — a composition. Every seat is screened for seniority and mapped
+        to the room we're building. AI Infra &amp; Cloud · Enterprise Tech · Data Centers &amp; Energy ·
+        Semiconductors · Storage &amp; Networking · VC / PE · Sovereign AI.</p>
+      <div class="nc-aud">
+        <div class="nc-aud__card" data-reveal>
+          <span class="nc-aud__pct">30<sup>%</sup></span>
+          <span class="nc-aud__label">Enterprise Infrastructure Leaders</span>
+          <p class="nc-aud__desc">CIOs, VPs of Infrastructure, and cloud architects evaluating neocloud for AI workloads.</p>
         </div>
-        <div class="nc-bar" data-reveal>
-          <div class="nc-bar__head mono"><span class="nc-bar__label">Neocloud Founders &amp; Executives</span><span class="nc-bar__pct">20%</span></div>
-          <div class="nc-bar__track"><div class="nc-bar__fill" style="width: 20%"></div></div>
-          <p class="nc-bar__desc">CEOs, CTOs, and VPs from the 10-12 companies defining the category.</p>
+        <div class="nc-aud__card" data-reveal>
+          <span class="nc-aud__pct">20<sup>%</sup></span>
+          <span class="nc-aud__label">Neocloud Founders &amp; Executives</span>
+          <p class="nc-aud__desc">CEOs, CTOs, and VPs from the 10-12 companies defining the category.</p>
         </div>
-        <div class="nc-bar" data-reveal>
-          <div class="nc-bar__head mono"><span class="nc-bar__label">Investors &amp; Analysts</span><span class="nc-bar__pct">15%</span></div>
-          <div class="nc-bar__track"><div class="nc-bar__fill" style="width: 15%"></div></div>
-          <p class="nc-bar__desc">VCs, private equity, and research analysts covering AI infrastructure.</p>
+        <div class="nc-aud__card" data-reveal>
+          <span class="nc-aud__pct">15<sup>%</sup></span>
+          <span class="nc-aud__label">Investors &amp; Analysts</span>
+          <p class="nc-aud__desc">VCs, private equity, and research analysts covering AI infrastructure.</p>
         </div>
-        <div class="nc-bar" data-reveal>
-          <div class="nc-bar__head mono"><span class="nc-bar__label">Data Center &amp; Energy Executives</span><span class="nc-bar__pct">15%</span></div>
-          <div class="nc-bar__track"><div class="nc-bar__fill" style="width: 15%"></div></div>
-          <p class="nc-bar__desc">Operators, power, cooling, and colocation - the physical layer, via iMasons.</p>
+        <div class="nc-aud__card" data-reveal>
+          <span class="nc-aud__pct">15<sup>%</sup></span>
+          <span class="nc-aud__label">Data Center &amp; Energy Executives</span>
+          <p class="nc-aud__desc">Operators, power, cooling, and colocation - the physical layer, via iMasons.</p>
         </div>
-        <div class="nc-bar" data-reveal>
-          <div class="nc-bar__head mono"><span class="nc-bar__label">Infrastructure Ecosystem</span><span class="nc-bar__pct">15%</span></div>
-          <div class="nc-bar__track"><div class="nc-bar__fill" style="width: 15%"></div></div>
-          <p class="nc-bar__desc">Storage, networking, silicon, and software - the partners neoclouds need.</p>
+        <div class="nc-aud__card" data-reveal>
+          <span class="nc-aud__pct">15<sup>%</sup></span>
+          <span class="nc-aud__label">Infrastructure Ecosystem</span>
+          <p class="nc-aud__desc">Storage, networking, silicon, and software - the partners neoclouds need.</p>
         </div>
-        <div class="nc-bar" data-reveal>
-          <div class="nc-bar__head mono"><span class="nc-bar__label">Developers &amp; Architects</span><span class="nc-bar__pct">5%</span></div>
-          <div class="nc-bar__track"><div class="nc-bar__fill" style="width: 5%"></div></div>
-          <p class="nc-bar__desc">Senior engineers building on neocloud platforms.</p>
+        <div class="nc-aud__card" data-reveal>
+          <span class="nc-aud__pct">5<sup>%</sup></span>
+          <span class="nc-aud__label">Developers &amp; Architects</span>
+          <p class="nc-aud__desc">Senior engineers building on neocloud platforms.</p>
         </div>
       </div>
+      <p class="nc-aud__foot mono" data-reveal>TARGET COMPOSITION · SENIORITY-SCREENED · 250 SEATS</p>
     </section>
 
     <!-- ══════════ 04 · THE COUNCIL ══════════ -->
