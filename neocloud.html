@@ -59,7 +59,9 @@
       border-radius: 3px;
     }
     .nc-roster__num { font-size: 0.62rem; color: var(--grey-dim); }
-    .nc-roster__name { font-weight: 800; font-size: 0.92rem; letter-spacing: 0.01em; text-transform: uppercase; }
+    .nc-roster__name { font-weight: 800; font-size: 0.92rem; letter-spacing: 0.01em; text-transform: uppercase; display: flex; flex-direction: column; gap: 0.35em; }
+    .nc-roster__tag { font-size: 0.54rem; font-weight: 700; letter-spacing: 0.12em; color: #34B6CE; }
+    .nc-roster__seat--keynote { border-color: rgba(52,182,206,0.55); background: rgba(52,182,206,0.07); }
     .nc-bars { margin-top: 2.4rem; display: flex; flex-direction: column; gap: 1.15rem; max-width: 780px; }
     .nc-bar__head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 0.45rem; }
     .nc-bar__label { font-size: 0.72rem; color: var(--white); }
@@ -354,11 +356,11 @@
         executives defining a new era of cloud infrastructure. Featured speakers, panelists, and curated lunch
         seats alongside the enterprise buyers they serve. The Council unveils on stage at the Summit.</p>
       <div class="nc-roster" data-reveal>
-        <div class="nc-roster__seat"><span class="nc-roster__num mono">01</span><span class="nc-roster__name">CoreWeave</span></div>
-        <div class="nc-roster__seat"><span class="nc-roster__num mono">02</span><span class="nc-roster__name">Lambda</span></div>
-        <div class="nc-roster__seat"><span class="nc-roster__num mono">03</span><span class="nc-roster__name">Nebius</span></div>
-        <div class="nc-roster__seat"><span class="nc-roster__num mono">04</span><span class="nc-roster__name">Crusoe</span></div>
-        <div class="nc-roster__seat"><span class="nc-roster__num mono">05</span><span class="nc-roster__name">Vultr</span></div>
+        <div class="nc-roster__seat nc-roster__seat--keynote"><span class="nc-roster__num mono">01</span><span class="nc-roster__name">Vultr<span class="nc-roster__tag mono">AFTERNOON KEYNOTE</span></span></div>
+        <div class="nc-roster__seat"><span class="nc-roster__num mono">02</span><span class="nc-roster__name">CoreWeave</span></div>
+        <div class="nc-roster__seat"><span class="nc-roster__num mono">03</span><span class="nc-roster__name">Lambda</span></div>
+        <div class="nc-roster__seat"><span class="nc-roster__num mono">04</span><span class="nc-roster__name">Nebius</span></div>
+        <div class="nc-roster__seat"><span class="nc-roster__num mono">05</span><span class="nc-roster__name">Crusoe</span></div>
         <div class="nc-roster__seat"><span class="nc-roster__num mono">06</span><span class="nc-roster__name">NScale</span></div>
         <div class="nc-roster__seat"><span class="nc-roster__num mono">07</span><span class="nc-roster__name">RunPod</span></div>
         <div class="nc-roster__seat"><span class="nc-roster__num mono">08</span><span class="nc-roster__name">Civo</span></div>
@@ -478,9 +480,16 @@
             centers, power systems, and network fabrics.</p>
           <p class="nc-partner__at mono">AT THE SUMMIT · THE FOUNDATION LAYER - DEDICATED PROGRAMMING TRACK</p>
         </article>
+        <article class="nc-partner" data-reveal>
+          <p class="nc-partner__kicker mono">TECHNOLOGY PARTNERS · CONFIRMED</p>
+          <h3>The hardware that <span class="h-grad">powers the cloud</span>.</h3>
+          <p>The companies building the hardware, storage, and networking that neoclouds run on - presenting
+            direct to the room. Confirmed partners: Supermicro, AMD, and WEKA.</p>
+          <p class="nc-partner__at mono">AT THE SUMMIT · THE TECHNOLOGY PARTNERS - MIDDAY DIRECT PRESENTATIONS</p>
+        </article>
       </div>
       <p class="mono" style="font-size: 0.66rem; color: var(--grey-dim); margin-top: 1.6rem;" data-reveal>
-        FOUNDING INFRASTRUCTURE PARTNER ARCHETYPES · AMD · SUPERMICRO</p>
+        CONFIRMED TECHNOLOGY PARTNERS · SUPERMICRO · AMD · WEKA</p>
     </section>
 
     <!-- ══════════ 07 · BUILT ON AIS PROOF ══════════ -->
