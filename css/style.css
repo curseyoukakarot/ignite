@@ -85,7 +85,10 @@ main [id], section[id] { scroll-margin-top: calc(var(--nav-h) + 8px); }
   font-weight: 900;
   font-stretch: 92%;
   font-size: clamp(2.6rem, 6vw, 5.2rem);
-  line-height: 0.96;
+  /* line-height must clear the full glyph box (incl. italic/heavy descenders)
+     to prevent baseline clipping; small padding-bottom buffers italic overhang */
+  line-height: 1.05;
+  padding-bottom: 0.08em;
   letter-spacing: -0.015em;
   text-transform: uppercase;
 }
