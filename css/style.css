@@ -760,7 +760,7 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
 /* ───────────────────────── proof ───────────────────────── */
 
 .proof { border-top: 1px solid var(--line); }
-.proof__title { text-align: center; margin: 0 0 2rem; font-family: var(--font-display, 'Fraunces', serif); font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700; color: #fff; }
+.proof__title { text-align: center; margin: 0 0 2rem; font-family: var(--font-display, 'Fraunces', serif); font-size: clamp(1.6rem, 2.4vw, 2.3rem); font-weight: 900; font-stretch: 92%; text-transform: uppercase; line-height: 1.05; color: #fff; }
 .proof__stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
