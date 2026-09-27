@@ -220,7 +220,7 @@ ol, ul { list-style: none; }
 .scorebug__clock span:last-child { color: var(--yellow); font-size: 0.95rem; font-weight: 600; font-variant-numeric: tabular-nums; }
 
 /* slide reel */
-.reel { position: absolute; right: var(--gut); bottom: clamp(28px, 4vh, 44px); z-index: 2; width: 220px; }
+.reel { position: absolute; right: calc(var(--gut) + 88px); bottom: clamp(28px, 4vh, 44px); /* clears the ignite-bot bubble */ z-index: 2; width: 220px; }
 .reel__bars { display: flex; gap: 6px; }
 .reel__bars i { position: relative; flex: 1; height: 2px; background: rgba(255, 255, 255, 0.25); overflow: hidden; }
 .reel__bars i::after { content: ""; position: absolute; inset: 0; background: var(--yellow); transform: scaleX(0); transform-origin: left; }
