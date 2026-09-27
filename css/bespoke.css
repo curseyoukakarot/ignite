@@ -380,26 +380,9 @@ ol, ul { list-style: none; }
 .play h3 { font-weight: 800; font-stretch: 112%; text-transform: uppercase; font-size: 1.35rem; letter-spacing: 0.01em; }
 .play p { color: var(--grey); margin-top: 8px; max-width: 520px; }
 
-/* ───────── access / partner ───────── */
-.access { position: relative; padding: clamp(88px, 10vw, 150px) 0 clamp(64px, 7vw, 100px); background: var(--ink); overflow: hidden; border-block: 1px solid var(--line); }
-.access::before {
-  content: ""; position: absolute; left: 50%; top: -30%; width: 900px; height: 900px; transform: translateX(-50%); pointer-events: none;
-  background: radial-gradient(circle, rgba(255, 197, 1, 0.09), transparent 62%);
-}
-.access__inner { position: relative; text-align: center; }
-.access__badge { display: inline-flex; align-items: center; gap: 14px; font-family: var(--f-mono); font-size: 0.76rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--white); padding: 0.7em 1.3em; border: 1px solid var(--line); }
-.access__badge i { font-style: normal; color: var(--yellow); }
-.access__lede { max-width: 680px; margin: 1.6rem auto 0; color: var(--grey); font-size: clamp(1rem, 1.3vw, 1.15rem); line-height: 1.7; }
-.access__label { margin-top: clamp(56px, 6vw, 80px); text-align: center; font-family: var(--f-mono); font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--grey-dim); }
-.logos {
-  margin-top: 24px; overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-          mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-}
-.logos__track { display: flex; width: max-content; animation: marquee 48s linear infinite; }
-.logos__track img { height: clamp(52px, 6vw, 86px); width: auto; max-width: none; padding-right: 80px; opacity: 0.85; }
-
 /* ───────── season: split-flap board ───────── */
+.playbook { padding-bottom: clamp(64px, 7vw, 112px); }
+.season { border-top: 1px solid var(--line); }
 .board {
   --tile: clamp(9px, 1.42vw, 20px);
   --gap: 2px;
@@ -640,6 +623,6 @@ ol, ul { list-style: none; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
-  .ticker__track, .logos__track { animation: none; }
+  .ticker__track { animation: none; }
   .hero__slide.is-active img { animation: none; transform: none; }
 }
