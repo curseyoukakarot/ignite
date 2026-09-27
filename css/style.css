@@ -738,6 +738,19 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
 .appendix__cell--hot p { color: rgba(0, 0, 0, 0.78); }
 .appendix__cell--hot .venue-list li { border-top-color: rgba(0, 0, 0, 0.28); color: rgba(0, 0, 0, 0.82); }
 .appendix__cell--hot .venue-list li::before { color: #050506; }
+.appendix__cta { margin-top: 1.8rem; }
+
+.btn--dark { background: #050506; color: var(--yellow); }
+.btn.btn--dark::before {
+  content: "";
+  position: absolute; inset: 0; z-index: 1;
+  background: var(--white);
+  transform: translateX(-101%);
+  transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.btn.btn--dark:hover::before { transform: translateX(0); }
+.btn--dark > span { transition: color 0.2s; }
+.btn--dark:hover > span { color: #050506; }
 
 .caret {
   display: inline-block;

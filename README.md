@@ -18,6 +18,7 @@ python3 -m http.server 4173
 |---|---|
 | `index.html` | Home page (hero video, ecosystem, events line-sheet, studio teaser, contact form) |
 | `events.html` | Events — flagship summits, road-ahead timeline, activations |
+| `bespoke.html` | Ignite Bespoke — VIP sports/dining/hospitality landing page (standalone look: `css/bespoke.css`, `js/bespoke.js`, `assets/bespoke/`); brief form posts to the shared intake endpoint |
 | `studio.html` | Ignite Studio — four pillars, session portfolio (click-to-play), process, why us |
 | `advisory.html` | GTM Advisory — full GTM motion, ICPs, engagement phases |
 | `team.html` | The Core Five — credential-badge cards |
