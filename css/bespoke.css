@@ -380,6 +380,20 @@ ol, ul { list-style: none; }
 .play h3 { font-weight: 800; font-stretch: 112%; text-transform: uppercase; font-size: 1.35rem; letter-spacing: 0.01em; }
 .play p { color: var(--grey); margin-top: 8px; max-width: 520px; }
 
+/* ───────── the stages: league marks ───────── */
+.stages { padding: clamp(56px, 7vw, 100px) 0; background: var(--ink); border-top: 1px solid var(--line); }
+.stages__label { text-align: center; font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--grey); }
+.stages__sep { color: var(--yellow); margin: 0 0.4em; }
+.stages__label b { font-weight: inherit; color: var(--white); }
+.stages__logos {
+  --unit: clamp(46px, 5.4vw, 78px);
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+  gap: 32px clamp(36px, 5.6vw, 84px);
+  margin-top: clamp(30px, 3.6vw, 48px);
+}
+.stages__logos img { height: calc(var(--unit) * var(--h, 1)); width: auto; opacity: 0.82; transition: opacity 0.3s, transform 0.4s var(--ease); }
+.stages__logos li:hover img { opacity: 1; transform: translateY(-3px); }
+
 /* ───────── season: split-flap board ───────── */
 .playbook { padding-bottom: clamp(64px, 7vw, 112px); }
 .season { border-top: 1px solid var(--line); }
@@ -607,6 +621,8 @@ ol, ul { list-style: none; }
   .bnav { gap: 12px; }
   .bnav__sub { display: none; }
   .eyebrow__sep { display: none; }
+  .stages__sep { display: none; }
+  .stages__label b { display: block; margin-top: 6px; }
   .eyebrow__more { flex-basis: 100%; color: rgba(255, 255, 255, 0.7); }
   .hero__ctas .bbtn { flex: 1 1 100%; text-align: center; }
   .rform__row { grid-template-columns: 1fr; }
