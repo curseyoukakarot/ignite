@@ -24,6 +24,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,72..125,100..900;1,72..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <!-- Portal banner: keep it hidden for 14 days after a dismiss, before first paint -->
+  <script>try{var d=+localStorage.getItem('ignite:portalBannerDismissed');if(d&&Date.now()-d<12096e5)document.documentElement.classList.add('no-portal-banner')}catch(e){}</script>
   <link rel="stylesheet" href="css/pages.css" />
   <style>
     /* Studio page - Blue Flame gradient override (Haley 2026-07-15) */
@@ -72,6 +74,15 @@
   <div class="cursor" id="cursor" aria-hidden="true"></div>
   <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
   <header class="nav" id="nav">
+    <div class="nav__banner" id="portalBanner">
+      <p class="nav__banner-text">
+        <span class="nav__banner-tag mono">New</span>
+        <span class="nav__banner-long">The Ignite Portal is live: members-only events, NeoNews and Studio sessions in one free account.</span>
+        <span class="nav__banner-short">The Ignite Portal is live.</span>
+      </p>
+      <a class="nav__banner-cta" href="https://portal.ignitegtm.com/login?utm_source=ignitegtm.com&amp;utm_medium=banner&amp;utm_campaign=portal">Join free &rarr;</a>
+      <button class="nav__banner-close" id="portalBannerClose" type="button" aria-label="Dismiss the portal banner">&times;</button>
+    </div>
     <div class="nav__inner">
       <a href="index.html" class="nav__logo" aria-label="IgniteGTM home">
         <img src="assets/ignite-logo.png" alt="IGN!TE" />
@@ -85,6 +96,7 @@
         <a href="index.html#insights">Insights</a>
         <a href="team.html">Team</a>
       </nav>
+      <a href="https://portal.ignitegtm.com/login?utm_source=ignitegtm.com&amp;utm_medium=nav&amp;utm_campaign=portal" class="nav__login">Log in</a>
       <a href="https://contact.ignitegtm.com/" class="btn btn--solid btn--nav"><span>Partner With Us</span></a>
       <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     </div>
@@ -97,6 +109,7 @@
       <a href="advisory.html">Advisory</a>
       <a href="index.html#insights">Insights</a>
       <a href="team.html">Team</a>
+      <a href="https://portal.ignitegtm.com/login?utm_source=ignitegtm.com&amp;utm_medium=mobile_menu&amp;utm_campaign=portal">Portal log in</a>
       <a href="https://contact.ignitegtm.com/" class="mobile-menu__cta">Partner With Us</a>
     </nav>
   </div>

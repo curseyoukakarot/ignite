@@ -21,7 +21,10 @@
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
   --pad: clamp(1.25rem, 4vw, 4rem);
   --nav-h: 76px;
+  --banner-h: 38px;  /* the portal banner on top of the nav; 0 once dismissed */
+  --header-h: calc(var(--nav-h) + var(--banner-h));
 }
+html.no-portal-banner { --banner-h: 0px; }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -76,7 +79,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 :focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
 
 /* every anchor target clears the fixed nav */
-main [id], section[id] { scroll-margin-top: calc(var(--nav-h) + 8px); }
+main [id], section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
 
 /* ───────────────────────── type system ─────────────────────────
    Weight contrast is deliberate: 900 impact / 300-450 support.  */
@@ -291,6 +294,65 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
 .nav__burger.is-open span:nth-child(1) { transform: translateY(4.5px) rotate(45deg); }
 .nav__burger.is-open span:nth-child(2) { transform: translateY(-4.5px) rotate(-45deg); }
 
+.nav__login {
+  display: inline-flex; align-items: center; gap: 0.5em;
+  font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--white);
+  transition: color 0.2s;
+}
+.nav__login::before {
+  content: ""; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--yellow); box-shadow: 0 0 10px rgba(255, 197, 1, 0.7);
+}
+.nav__login:hover { color: var(--yellow); }
+/* Logo, Log in and the CTA keep their size. Up to 1024px (tablets) the links
+   and the CTA move into the menu; just above that the nav tightens. */
+.nav__logo, .nav__login, .btn--nav { flex: none; white-space: nowrap; }
+@media (max-width: 1180px) and (min-width: 1025px) {
+  .nav__inner { gap: 1.5rem; }
+  .nav__links { gap: 1.4rem; }
+}
+@media (max-width: 1024px) {
+  .nav__links, .btn--nav { display: none; }
+  .nav__burger { display: flex; margin-left: 0.4rem; }
+  .nav__login { margin-left: auto; }
+}
+
+/* Portal banner: the top strip of the fixed header, so it sticks with the nav.
+   Dismissing it sets html.no-portal-banner (14 days; see the <head> script). */
+.nav__banner {
+  position: relative;
+  height: var(--banner-h);
+  display: flex; align-items: center; justify-content: center; gap: 1rem;
+  padding: 0 calc(var(--pad) + 2.4rem) 0 var(--pad);
+  background: var(--yellow); color: var(--black);
+  font-size: 0.8rem; font-weight: 600;
+  white-space: nowrap; overflow: hidden;
+}
+html.no-portal-banner .nav__banner { display: none; }
+.nav__banner-text { display: flex; align-items: center; gap: 0.7rem; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.nav__banner-tag {
+  flex: none; padding: 0.3em 0.6em;
+  background: var(--black); color: var(--yellow);
+  font-size: 0.6rem; letter-spacing: 0.14em;
+}
+.nav__banner-long, .nav__banner-short { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.nav__banner-short { display: none; }
+.nav__banner-cta {
+  flex: none;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  border-bottom: 2px solid var(--black); padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.nav__banner-cta:hover { color: var(--ember); border-color: var(--ember); }
+.nav__banner-close {
+  position: absolute; right: calc(var(--pad) - 0.5rem); top: 50%; transform: translateY(-50%);
+  width: 30px; height: 30px; display: grid; place-items: center;
+  background: none; border: 0; cursor: pointer;
+  color: var(--black); font-size: 1.25rem; line-height: 1; opacity: 0.65;
+}
+.nav__banner-close:hover { opacity: 1; }
+
 .mobile-menu {
   position: fixed; inset: 0; z-index: 8400;
   background: var(--black);
@@ -313,7 +375,7 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
   position: relative;
   min-height: 100svh;
   display: flex; flex-direction: column; justify-content: center;
-  padding: calc(var(--nav-h) + 3rem) var(--pad) 4.5rem;
+  padding: calc(var(--header-h) + 3rem) var(--pad) 4.5rem;
   overflow: hidden;
 }
 
@@ -454,7 +516,7 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
   gap: clamp(2rem, 6vw, 6rem);
   align-items: start;
 }
-.ecosystem__sticky { position: sticky; top: calc(var(--nav-h) + 2rem); }
+.ecosystem__sticky { position: sticky; top: calc(var(--header-h) + 2rem); }
 .ecosystem__sticky .h-display { margin-bottom: 1.8rem; }
 .ecosystem__bolt {
   width: min(230px, 40%);
@@ -592,7 +654,7 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
   padding: 3.2rem 1.5rem;
   margin-inline: -1.5rem;         /* hover wash extends past the column edges */
   border-top: 1px solid var(--line);
-  scroll-margin-top: calc(var(--nav-h) + 16px);
+  scroll-margin-top: calc(var(--header-h) + 16px);
   transition: background 0.35s ease;
 }
 .index-row:last-of-type { border-bottom: 1px solid var(--line); }
@@ -707,7 +769,7 @@ body.has-mouse .cursor, body.has-mouse .cursor-ring { opacity: 1; }
   --cellpad: clamp(2rem, 3.5vw, 3.5rem);
   background: var(--ink);
   padding: var(--cellpad);
-  scroll-margin-top: calc(var(--nav-h) + 16px);
+  scroll-margin-top: calc(var(--header-h) + 16px);
 }
 .appendix__title {
   font-size: clamp(1.6rem, 2.4vw, 2.3rem);
@@ -1232,13 +1294,20 @@ input:invalid:not(:placeholder-shown) { border-color: rgba(255, 61, 0, 0.6); }
   .proof__stats { grid-template-columns: 1fr 1fr; gap: 2.5rem 1.5rem; }
 }
 
+/* the narrowest phones: drop the banner's NEW tag so "Join free" always fits */
+@media (max-width: 400px) {
+  .nav__banner-tag { display: none; }
+}
+
 @media (max-width: 768px) {
   /* no open right side on small screens - soften the shift so the footage
      keeps its identity instead of over-cropping */
   .hero__media { --video-shift: 15%; }
   .hero__line--1, .hero__line--2 { font-size: clamp(2.55rem, 13.5vw, 3.4rem); }
-  .nav__links, .btn--nav { display: none; }
-  .nav__burger { display: flex; }
+  .nav__login { font-size: 0.74rem; }
+  .nav__banner { gap: 0.7rem; font-size: 0.74rem; }
+  .nav__banner-long { display: none; }
+  .nav__banner-short { display: inline; }
   .insights__cards { grid-template-columns: 1fr; }
   .team__grid { grid-template-columns: 1fr; max-width: 380px; }
   .form__row { grid-template-columns: 1fr; }

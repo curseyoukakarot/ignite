@@ -25,7 +25,7 @@
 
 .page-hero {
   position: relative;
-  padding: calc(var(--nav-h) + clamp(4.5rem, 9vw, 8rem)) var(--pad) clamp(3.5rem, 7vw, 6rem);
+  padding: calc(var(--header-h) + clamp(4.5rem, 9vw, 8rem)) var(--pad) clamp(3.5rem, 7vw, 6rem);
   border-bottom: 1px solid var(--line);
   overflow: hidden;
 }
@@ -470,7 +470,7 @@ button.poster { cursor: pointer; font: inherit; text-align: left; padding: 0; }
   gap: clamp(2rem, 6vw, 6rem);
   align-items: start;
 }
-.split__sticky { position: sticky; top: calc(var(--nav-h) + 2rem); }
+.split__sticky { position: sticky; top: calc(var(--header-h) + 2rem); }
 
 /* big quote / manifesto line */
 .manifesto {
@@ -533,7 +533,7 @@ button.poster { cursor: pointer; font: inherit; text-align: left; padding: 0; }
    gutter on the copy side. Type composes AGAINST the photo, not on top. */
 
 .issue-masthead {
-  position: absolute; top: var(--nav-h); left: 0; right: 0;
+  position: absolute; top: var(--header-h); left: 0; right: 0;
   display: flex; justify-content: space-between; gap: 1rem;
   padding: 0.8rem var(--pad);
   border-top: 1px solid rgba(255, 255, 255, 0.14);
