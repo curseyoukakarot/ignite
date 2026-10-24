@@ -183,6 +183,17 @@ ScrollTrigger.create({
   onLeaveBack: () => nav.classList.remove("is-scrolled"),
 });
 
+// Portal banner (top strip of the header): dismissing hides it for 14 days,
+// read back by the inline script in each page's <head> before first paint.
+const portalBannerClose = document.getElementById("portalBannerClose");
+if (portalBannerClose) {
+  portalBannerClose.addEventListener("click", () => {
+    document.documentElement.classList.add("no-portal-banner");
+    try { localStorage.setItem("ignite:portalBannerDismissed", String(Date.now())); } catch (e) {}
+    ScrollTrigger.refresh();
+  });
+}
+
 const burger = document.getElementById("navBurger");
 const mobileMenu = document.getElementById("mobileMenu");
 function toggleMenu(force) {
@@ -378,7 +389,7 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
     const target = document.querySelector(id);
     if (!target) return;
     e.preventDefault();
-    const y = target.getBoundingClientRect().top + window.scrollY - 70;
+    const y = target.getBoundingClientRect().top + window.scrollY - ((nav && nav.offsetHeight) || 70) - 8;
     window.scrollTo({ top: y, behavior: prefersReducedMotion ? "auto" : "smooth" });
   });
 });
