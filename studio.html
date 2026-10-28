@@ -89,7 +89,6 @@
         <span class="nav__logo-sub mono">GTM</span>
       </a>
       <nav class="nav__links" aria-label="Primary">
-        <a href="index.html#ecosystem">Ecosystem</a>
         <a href="events.html">Events</a>
         <a href="studio.html" class="is-here" aria-current="page">Studio</a>
         <a href="advisory.html">Advisory</a>
@@ -103,7 +102,6 @@
   </header>
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <nav aria-label="Mobile">
-      <a href="index.html#ecosystem">Ecosystem</a>
       <a href="events.html">Events</a>
       <a href="studio.html">Studio</a>
       <a href="advisory.html">Advisory</a>
@@ -223,7 +221,25 @@
       <span class="studio__ghost" aria-hidden="true" data-parallax="60">WORK</span>
       <div class="section studio__inner">
         <p class="eyebrow mono" data-reveal><span class="eyebrow__slash">//</span> 02 · The Work</p>
+
+        <!-- longform: the IgniteGTM YouTube channel, newest first (filled by
+             the feed script at the end of the page; the note covers failures) -->
         <div class="sec-head" data-reveal>
+          <h2>THE LONGFORM<span class="dot-red">.</span></h2>
+          <span class="mono">LATEST FROM THE IGNITEGTM YOUTUBE CHANNEL</span>
+        </div>
+        <div class="poster-grid poster-grid--yt" id="ytGrid" hidden></div>
+        <p class="yt-note mono" id="ytNote" hidden>YouTube didn&rsquo;t answer just now -
+          <a href="https://www.youtube.com/@IgniteGTM" target="_blank" rel="noopener">watch on the channel ↗</a></p>
+        <noscript>
+          <p class="yt-note mono">Longform interviews and summit sessions live on
+            <a href="https://www.youtube.com/@IgniteGTM" target="_blank" rel="noopener">youtube.com/@IgniteGTM ↗</a></p>
+        </noscript>
+        <div class="yt-actions" data-reveal>
+          <a class="btn btn--ghost" href="https://www.youtube.com/@IgniteGTM?sub_confirmation=1" target="_blank" rel="noopener"><span>Subscribe on YouTube</span></a>
+        </div>
+
+        <div class="sec-head sec-head--follow" data-reveal>
           <h2>SELECTS FROM THE CUTTING ROOM<span class="dot-red">.</span></h2>
           <span class="mono">THE IGNITE STUDIO SESSIONS · AIS5</span>
         </div>
@@ -423,5 +439,79 @@
   <noscript>
     <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=9927164&amp;fmt=gif" />
   </noscript>
+
+  <!-- longform grid: the IgniteGTM YouTube channel via contact.ignitegtm.com,
+       played in the shared reel lightbox through a youtube-nocookie embed -->
+  <script>
+    (function () {
+      var grid = document.getElementById("ytGrid");
+      var note = document.getElementById("ytNote");
+      if (!grid) return;
+      var esc = function (s) {
+        var d = document.createElement("span");
+        d.textContent = s == null ? "" : String(s);
+        return d.innerHTML.replace(/"/g, "&quot;");
+      };
+      fetch("https://contact.ignitegtm.com/api/ignite/youtube")
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          var vids = (data.videos || []).slice(0, 12);
+          if (!vids.length) throw new Error("empty feed");
+          grid.innerHTML = vids.map(function (v) {
+            var meta = [[v.series, v.guest].filter(Boolean).join(", "), v.published_text]
+              .filter(Boolean).join(" · ");
+            return '<button class="poster poster--live poster--yt" type="button" data-yt="' + esc(v.id) +
+              '" aria-haspopup="dialog" aria-label="Play ' + esc(v.headline) + '">' +
+              '<img src="https://i.ytimg.com/vi/' + esc(v.id) + '/hqdefault.jpg" alt="" loading="lazy" />' +
+              (v.duration ? '<span class="poster__tag mono">' + esc(v.duration) + "</span>" : "") +
+              '<span class="poster__label mono"><strong>' + esc(v.headline) + "</strong>" +
+              '<span class="poster__meta">' + esc(meta) + "</span></span>" +
+              '<span class="poster__play" aria-hidden="true"></span></button>';
+          }).join("");
+          grid.hidden = false;
+
+          var lb = document.getElementById("reelLightbox");
+          var reel = document.getElementById("reelFull");
+          var frame = null;
+          var clean = function () {
+            if (!frame) return;
+            frame.remove();
+            frame = null;
+            reel.style.display = "";
+          };
+          // page.js owns hiding the lightbox on these; we only drop the embed
+          lb.querySelectorAll("[data-lightbox-close]").forEach(function (el) {
+            el.addEventListener("click", clean);
+          });
+          document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") clean();
+          });
+          grid.querySelectorAll("[data-yt]").forEach(function (b) {
+            b.addEventListener("click", function () {
+              clean();
+              reel.pause();
+              reel.style.display = "none";
+              frame = document.createElement("iframe");
+              frame.className = "lightbox__yt";
+              frame.src = "https://www.youtube-nocookie.com/embed/" + b.dataset.yt +
+                "?autoplay=1&rel=0&modestbranding=1&playsinline=1";
+              frame.title = b.getAttribute("aria-label") || "YouTube video";
+              frame.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+              frame.setAttribute("allowfullscreen", "");
+              reel.insertAdjacentElement("afterend", frame);
+              lb.hidden = false;
+              document.body.style.overflow = "hidden";
+              document.querySelectorAll("video[data-inview-play]").forEach(function (v) { v.pause(); });
+              lb.querySelector(".lightbox__close").focus();
+              if (window.gsap && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                gsap.fromTo(".lightbox__body", { scale: 0.94, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "power3.out" });
+                gsap.fromTo(".lightbox__backdrop", { opacity: 0 }, { opacity: 1, duration: 0.3 });
+              }
+            });
+          });
+        })
+        .catch(function () { note.hidden = false; });
+    })();
+  </script>
 </body>
 </html>

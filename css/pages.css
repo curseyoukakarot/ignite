@@ -209,6 +209,38 @@ button.poster { cursor: pointer; font: inherit; text-align: left; padding: 0; }
   transform: skewX(-8deg) scale(1);
 }
 
+/* longform channel grid (studio): YouTube tiles are true 16:9, so the 4:3
+   hqdefault thumbnail's letterbox bars crop away under object-fit: cover */
+.poster--yt { aspect-ratio: 16 / 9; }
+.poster--yt .poster__label { right: 0.9rem; line-height: 1.55; }
+.poster--yt .poster__label strong {
+  display: block;
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+.poster--yt .poster__meta { color: rgba(255, 255, 255, 0.6); }
+.poster--yt .poster__tag {
+  z-index: 2;
+  background: rgba(5, 5, 6, 0.72);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+.yt-note { margin-top: 1.4rem; font-size: 0.72rem; color: var(--grey); }
+.yt-note a { color: var(--yellow); }
+.yt-actions { margin-top: 2rem; }
+.sec-head--follow { margin-top: 5rem; }
+.lightbox__yt {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+  border: 1px solid var(--line);
+  background: #000;
+}
+
 /* numbered detail rows (services / method) */
 .detail-row {
   display: grid;
