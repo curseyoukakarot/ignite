@@ -455,7 +455,7 @@
       fetch("https://contact.ignitegtm.com/api/ignite/youtube")
         .then(function (r) { return r.json(); })
         .then(function (data) {
-          var vids = (data.videos || []).slice(0, 12);
+          var vids = (data.videos || []).slice(0, 6);
           if (!vids.length) throw new Error("empty feed");
           grid.innerHTML = vids.map(function (v) {
             var meta = [[v.series, v.guest].filter(Boolean).join(", "), v.published_text]
